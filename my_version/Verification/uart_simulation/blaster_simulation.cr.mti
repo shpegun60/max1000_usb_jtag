@@ -1,0 +1,65 @@
+C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/Verification/uart_simulation/blaster_handler_lib/blaster_handler.sv {1 {vlog -work work -vopt -sv -stats=none {C:\Users\Sit19\Documents\FPGA_DOCS\cyclone_10_gx\blaster\cyclone4_blaster_handler\Verification\uart_simulation\blaster_handler_lib\blaster_handler.sv}
+QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module blaster_handler
+
+Top level modules:
+	blaster_handler
+
+} {} {}} C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/Verification/uart_simulation/uart_rx.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/Verification/uart_simulation/uart_rx.sv
+QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module uart_rx
+
+Top level modules:
+	uart_rx
+
+} {} {}} C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/Verification/uart_simulation/blaster_handler_lib/jtag_logic.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/Verification/uart_simulation/blaster_handler_lib/jtag_logic.sv
+QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module jtag_logic
+
+Top level modules:
+	jtag_logic
+
+} {} {}} C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/Verification/uart_simulation/blaster_handler_lib/blaster_uart/blaster_tx.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/Verification/uart_simulation/blaster_handler_lib/blaster_uart/blaster_tx.sv
+QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module blaster_tx
+
+Top level modules:
+	blaster_tx
+
+} {} {}} C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/Verification/uart_simulation/blaster_handler_lib/blaster_fifo/blaster_fifo.v {1 {vlog -work work -vopt -stats=none C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/Verification/uart_simulation/blaster_handler_lib/blaster_fifo/blaster_fifo.v
+QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module blaster_fifo
+
+Top level modules:
+	blaster_fifo
+
+} {} {}} C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/Verification/uart_simulation/uart_tx.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/Verification/uart_simulation/uart_tx.sv
+QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module uart_tx
+
+Top level modules:
+	uart_tx
+
+} {} {}} C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/Verification/uart_simulation/testbench.sv {1 {vlog -work work -vopt -sv -stats=none {C:\Users\Sit19\Documents\FPGA_DOCS\cyclone_10_gx\blaster\cyclone4_blaster_handler\Verification\uart_simulation\testbench.sv}
+QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling interface signals_intf
+-- Compiling module top_sim
+
+Top level modules:
+	top_sim
+
+} {} {}} C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/Verification/uart_simulation/blaster_handler_lib/blaster_uart/blaster_rx.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/Verification/uart_simulation/blaster_handler_lib/blaster_uart/blaster_rx.sv
+QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module blaster_rx
+
+Top level modules:
+	blaster_rx
+
+} {} {}} C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/Verification/uart_simulation/blaster_handler_lib/blaster_univibrator.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/Verification/uart_simulation/blaster_handler_lib/blaster_univibrator.sv
+QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module blaster_univibrator
+
+Top level modules:
+	blaster_univibrator
+
+} {} {}}
