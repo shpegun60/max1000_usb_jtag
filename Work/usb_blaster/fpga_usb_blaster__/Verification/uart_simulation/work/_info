@@ -1,0 +1,243 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.01, Jan 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/questasim64_2020.1/examples
+T_opt
+!s110 1622995441
+VZOj`VT7l_Tme_M3BaN4_R0
+04 7 4 work top_sim fast 0
+=8-02004c4f4f50-60bcf1f0-3c7-27a8
+o-quiet -auto_acc_if_foreign -work work -L C:/Users/admin/Documents/Sim_lib_questasim2020.1/220model -L C:/Users/admin/Documents/Sim_lib_questasim2020.1/altera_primitives -L C:/Users/admin/Documents/Sim_lib_questasim2020.1/altera_lnsim -L C:/Users/admin/Documents/Sim_lib_questasim2020.1/altera_mf +acc
+Z0 tCvgOpt 0
+n@_opt
+OL;O;2020.1;71
+vblaster_fifo
+Z1 !s110 1622995436
+!i10b 1
+!s100 3dU:XZa06m@g@l`CFXS`S0
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IHAEhJIW1FR93RR`hXXhQc1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 dC:/Users/admin/Documents/FPGA/fpga_usb_blaster/Verification/uart_simulation
+Z5 w1622985007
+8C:/Users/admin/Documents/FPGA/fpga_usb_blaster/Verification/uart_simulation/blaster_handler_lib/blaster_fifo/blaster_fifo.v
+FC:/Users/admin/Documents/FPGA/fpga_usb_blaster/Verification/uart_simulation/blaster_handler_lib/blaster_fifo/blaster_fifo.v
+!i122 384
+L0 39 54
+Z6 OL;L;2020.1;71
+r1
+!s85 0
+31
+Z7 !s108 1622995436.000000
+!s107 C:/Users/admin/Documents/FPGA/fpga_usb_blaster/Verification/uart_simulation/blaster_handler_lib/blaster_fifo/blaster_fifo.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/admin/Documents/FPGA/fpga_usb_blaster/Verification/uart_simulation/blaster_handler_lib/blaster_fifo/blaster_fifo.v|
+!i113 0
+o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R0
+vblaster_handler
+Z8 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z9 !s110 1622995435
+!i10b 1
+!s100 ;^Wb[T>MzO68TcM0IYKCP2
+R2
+II@ACiO01[I@:acJFQ_hZ33
+R3
+S1
+R4
+w1622994689
+8C:/Users/admin/Documents/FPGA/fpga_usb_blaster/Verification/uart_simulation/blaster_handler_lib/blaster_handler.sv
+FC:/Users/admin/Documents/FPGA/fpga_usb_blaster/Verification/uart_simulation/blaster_handler_lib/blaster_handler.sv
+!i122 380
+L0 1 322
+R6
+r1
+!s85 0
+31
+Z10 !s108 1622995435.000000
+!s107 C:/Users/admin/Documents/FPGA/fpga_usb_blaster/Verification/uart_simulation/blaster_handler_lib/blaster_handler.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/admin/Documents/FPGA/fpga_usb_blaster/Verification/uart_simulation/blaster_handler_lib/blaster_handler.sv|
+!i113 0
+Z11 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R0
+vblaster_rx
+R8
+R1
+!i10b 1
+!s100 DzXo=7gfIG3=T`YQD2V<a2
+R2
+IU104Wh<DTZ>eXSch0RHUb2
+R3
+S1
+R4
+R5
+8C:/Users/admin/Documents/FPGA/fpga_usb_blaster/Verification/uart_simulation/blaster_handler_lib/blaster_uart/blaster_rx.sv
+FC:/Users/admin/Documents/FPGA/fpga_usb_blaster/Verification/uart_simulation/blaster_handler_lib/blaster_uart/blaster_rx.sv
+!i122 382
+Z12 L0 4 125
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/admin/Documents/FPGA/fpga_usb_blaster/Verification/uart_simulation/blaster_handler_lib/blaster_uart/blaster_rx.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/admin/Documents/FPGA/fpga_usb_blaster/Verification/uart_simulation/blaster_handler_lib/blaster_uart/blaster_rx.sv|
+!i113 0
+R11
+R0
+vblaster_tx
+R8
+R1
+!i10b 1
+!s100 MQO?;l<T@cnL`YlHQ6`gd0
+R2
+I9R<ZXF^:;f7^WE_^T9QF51
+R3
+S1
+R4
+R5
+8C:\Users\admin\Documents\FPGA\fpga_usb_blaster\Verification\uart_simulation\blaster_handler_lib\blaster_uart\blaster_tx.sv
+FC:\Users\admin\Documents\FPGA\fpga_usb_blaster\Verification\uart_simulation\blaster_handler_lib\blaster_uart\blaster_tx.sv
+!i122 383
+Z13 L0 3 124
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:\Users\admin\Documents\FPGA\fpga_usb_blaster\Verification\uart_simulation\blaster_handler_lib\blaster_uart\blaster_tx.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:\Users\admin\Documents\FPGA\fpga_usb_blaster\Verification\uart_simulation\blaster_handler_lib\blaster_uart\blaster_tx.sv|
+!i113 0
+R11
+R0
+vblaster_univibrator
+R8
+R9
+!i10b 1
+!s100 4i_Foc[NS]<MAJgATeLDR3
+R2
+INGiJ[L>DdG4<an80eoc_=3
+R3
+S1
+R4
+w1622995421
+8C:/Users/admin/Documents/FPGA/fpga_usb_blaster/Verification/uart_simulation/blaster_handler_lib/blaster_univibrator.sv
+FC:/Users/admin/Documents/FPGA/fpga_usb_blaster/Verification/uart_simulation/blaster_handler_lib/blaster_univibrator.sv
+!i122 381
+L0 2 36
+R6
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/admin/Documents/FPGA/fpga_usb_blaster/Verification/uart_simulation/blaster_handler_lib/blaster_univibrator.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/admin/Documents/FPGA/fpga_usb_blaster/Verification/uart_simulation/blaster_handler_lib/blaster_univibrator.sv|
+!i113 0
+R11
+R0
+Ysignals_intf
+R8
+R9
+!i10b 1
+!s100 oDbCAI7<cXOZBYk@hVS1R1
+R2
+I;3TEFgl8CEABTgeC@8R^21
+R3
+S1
+R4
+Z14 w1622992665
+Z15 8C:/Users/admin/Documents/FPGA/fpga_usb_blaster/Verification/uart_simulation/testbench.sv
+Z16 FC:/Users/admin/Documents/FPGA/fpga_usb_blaster/Verification/uart_simulation/testbench.sv
+!i122 377
+L0 6 0
+R6
+r1
+!s85 0
+31
+R10
+Z17 !s107 C:/Users/admin/Documents/FPGA/fpga_usb_blaster/Verification/uart_simulation/testbench.sv|
+Z18 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/admin/Documents/FPGA/fpga_usb_blaster/Verification/uart_simulation/testbench.sv|
+!i113 0
+R11
+R0
+vtop_sim
+R8
+R9
+!i10b 1
+!s100 l6EengO:zDTXlOLWBi>K31
+R2
+IE8H;HBXTdUASB?F_boTI>1
+R3
+S1
+R4
+R14
+R15
+R16
+!i122 377
+L0 24 111
+R6
+r1
+!s85 0
+31
+R10
+R17
+R18
+!i113 0
+R11
+R0
+vuart_rx
+R8
+R9
+!i10b 1
+!s100 T[[AKU>kS>U?Y`NlnZ=z=3
+R2
+I8dH1^8SF:lH3kRNAVm96M2
+R3
+S1
+R4
+R5
+8C:/Users/admin/Documents/FPGA/fpga_usb_blaster/Verification/uart_simulation/uart_rx.sv
+FC:/Users/admin/Documents/FPGA/fpga_usb_blaster/Verification/uart_simulation/uart_rx.sv
+!i122 378
+R12
+R6
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/admin/Documents/FPGA/fpga_usb_blaster/Verification/uart_simulation/uart_rx.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/admin/Documents/FPGA/fpga_usb_blaster/Verification/uart_simulation/uart_rx.sv|
+!i113 0
+R11
+R0
+vuart_tx
+R8
+R9
+!i10b 1
+!s100 kOBO>Z8SciTGb[GYbWdno3
+R2
+IM>f`Ab=>X[:P4z0@H_8hS2
+R3
+S1
+R4
+R5
+8C:/Users/admin/Documents/FPGA/fpga_usb_blaster/Verification/uart_simulation/uart_tx.sv
+FC:/Users/admin/Documents/FPGA/fpga_usb_blaster/Verification/uart_simulation/uart_tx.sv
+!i122 379
+R13
+R6
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/admin/Documents/FPGA/fpga_usb_blaster/Verification/uart_simulation/uart_tx.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/admin/Documents/FPGA/fpga_usb_blaster/Verification/uart_simulation/uart_tx.sv|
+!i113 0
+R11
+R0

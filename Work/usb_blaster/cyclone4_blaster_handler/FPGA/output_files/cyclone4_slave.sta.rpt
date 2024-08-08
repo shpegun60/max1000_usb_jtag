@@ -1,0 +1,1350 @@
+Timing Analyzer report for cyclone4_slave
+Mon Jun 07 17:13:04 2021
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. SDC File List
+  5. Clocks
+  6. Slow 1200mV 85C Model Fmax Summary
+  7. Timing Closure Recommendations
+  8. Slow 1200mV 85C Model Setup Summary
+  9. Slow 1200mV 85C Model Hold Summary
+ 10. Slow 1200mV 85C Model Recovery Summary
+ 11. Slow 1200mV 85C Model Removal Summary
+ 12. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 13. Slow 1200mV 85C Model Setup: 'CLK'
+ 14. Slow 1200mV 85C Model Hold: 'CLK'
+ 15. Slow 1200mV 85C Model Metastability Summary
+ 16. Slow 1200mV 0C Model Fmax Summary
+ 17. Slow 1200mV 0C Model Setup Summary
+ 18. Slow 1200mV 0C Model Hold Summary
+ 19. Slow 1200mV 0C Model Recovery Summary
+ 20. Slow 1200mV 0C Model Removal Summary
+ 21. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 22. Slow 1200mV 0C Model Setup: 'CLK'
+ 23. Slow 1200mV 0C Model Hold: 'CLK'
+ 24. Slow 1200mV 0C Model Metastability Summary
+ 25. Fast 1200mV 0C Model Setup Summary
+ 26. Fast 1200mV 0C Model Hold Summary
+ 27. Fast 1200mV 0C Model Recovery Summary
+ 28. Fast 1200mV 0C Model Removal Summary
+ 29. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 30. Fast 1200mV 0C Model Setup: 'CLK'
+ 31. Fast 1200mV 0C Model Hold: 'CLK'
+ 32. Fast 1200mV 0C Model Metastability Summary
+ 33. Multicorner Timing Analysis Summary
+ 34. Board Trace Model Assignments
+ 35. Input Transition Times
+ 36. Signal Integrity Metrics (Slow 1200mv 0c Model)
+ 37. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 38. Signal Integrity Metrics (Fast 1200mv 0c Model)
+ 39. Setup Transfers
+ 40. Hold Transfers
+ 41. Report TCCS
+ 42. Report RSKM
+ 43. Unconstrained Paths Summary
+ 44. Clock Status Summary
+ 45. Unconstrained Input Ports
+ 46. Unconstrained Output Ports
+ 47. Unconstrained Input Ports
+ 48. Unconstrained Output Ports
+ 49. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                         ;
++-----------------------+---------------------------------------------------------+
+; Quartus Prime Version ; Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                                  ;
+; Revision Name         ; cyclone4_slave                                          ;
+; Device Family         ; Cyclone IV E                                            ;
+; Device Name           ; EP4CE6E22C8                                             ;
+; Timing Models         ; Final                                                   ;
+; Delay Model           ; Combined                                                ;
+; Rise/Fall Delays      ; Enabled                                                 ;
++-----------------------+---------------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 6           ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.01        ;
+; Maximum used               ; 6           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-6         ;   0.3%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------+
+; SDC File List                                              ;
++------------------------+--------+--------------------------+
+; SDC File Path          ; Status ; Read at                  ;
++------------------------+--------+--------------------------+
+; cyclone4_slave.out.sdc ; OK     ; Mon Jun 07 17:13:03 2021 ;
++------------------------+--------+--------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; CLK        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLK } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                       ;
++-----------+-----------------+------------+---------------------------------------------------------------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note                                                          ;
++-----------+-----------------+------------+---------------------------------------------------------------+
+; 388.2 MHz ; 250.0 MHz       ; CLK        ; limit due to minimum period restriction (max I/O toggle rate) ;
++-----------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++-------------------------------------+
+; Slow 1200mV 85C Model Setup Summary ;
++-------+--------+--------------------+
+; Clock ; Slack  ; End Point TNS      ;
++-------+--------+--------------------+
+; CLK   ; -1.576 ; -51.678            ;
++-------+--------+--------------------+
+
+
++------------------------------------+
+; Slow 1200mV 85C Model Hold Summary ;
++-------+-------+--------------------+
+; Clock ; Slack ; End Point TNS      ;
++-------+-------+--------------------+
+; CLK   ; 0.454 ; 0.000              ;
++-------+-------+--------------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++-------+--------+----------------------------------+
+; Clock ; Slack  ; End Point TNS                    ;
++-------+--------+----------------------------------+
+; CLK   ; -3.000 ; -90.733                          ;
++-------+--------+----------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'CLK'                                                                                                              ;
++--------+----------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                        ; To Node                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.576 ; state.BITS_SET_PINS_FROM_DATA    ; state.WAIT_FOR_N_TXE_LOW      ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.497      ;
+; -1.560 ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; ioshifter[0]                  ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.481      ;
+; -1.560 ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; ioshifter[1]                  ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.481      ;
+; -1.560 ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; ioshifter[6]                  ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.481      ;
+; -1.560 ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; ioshifter[7]                  ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.481      ;
+; -1.560 ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; ioshifter[3]                  ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.481      ;
+; -1.560 ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; ioshifter[4]                  ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.481      ;
+; -1.560 ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; ioshifter[5]                  ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.481      ;
+; -1.560 ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; ioshifter[2]                  ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.481      ;
+; -1.504 ; ioshifter[3]                     ; ioshifter[2]                  ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.425      ;
+; -1.481 ; state.LATCH_DATA_FROM_HOST       ; ioshifter[0]                  ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.402      ;
+; -1.481 ; state.LATCH_DATA_FROM_HOST       ; ioshifter[1]                  ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.402      ;
+; -1.481 ; state.LATCH_DATA_FROM_HOST       ; ioshifter[6]                  ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.402      ;
+; -1.481 ; state.LATCH_DATA_FROM_HOST       ; ioshifter[7]                  ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.402      ;
+; -1.481 ; state.LATCH_DATA_FROM_HOST       ; ioshifter[3]                  ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.402      ;
+; -1.481 ; state.LATCH_DATA_FROM_HOST       ; ioshifter[4]                  ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.402      ;
+; -1.481 ; state.LATCH_DATA_FROM_HOST       ; ioshifter[5]                  ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.402      ;
+; -1.481 ; state.LATCH_DATA_FROM_HOST       ; ioshifter[2]                  ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.402      ;
+; -1.465 ; bitcount[1]                      ; bitcount[8]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.386      ;
+; -1.461 ; state.BITS_SET_PINS_FROM_DATA    ; B_TCK~reg0                    ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.382      ;
+; -1.399 ; bitcount[4]                      ; state.BYTES_SET_BITCOUNT      ; CLK          ; CLK         ; 1.000        ; -0.079     ; 2.321      ;
+; -1.399 ; bitcount[4]                      ; state.BITS_SET_PINS_FROM_DATA ; CLK          ; CLK         ; 1.000        ; -0.079     ; 2.321      ;
+; -1.399 ; state.BITS_SET_PINS_FROM_DATA    ; state.WAIT_FOR_N_RXF_LOW      ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.320      ;
+; -1.398 ; ioshifter[5]                     ; ioshifter[4]                  ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.319      ;
+; -1.390 ; bitcount[6]                      ; state.BYTES_SET_BITCOUNT      ; CLK          ; CLK         ; 1.000        ; -0.079     ; 2.312      ;
+; -1.390 ; bitcount[6]                      ; state.BITS_SET_PINS_FROM_DATA ; CLK          ; CLK         ; 1.000        ; -0.079     ; 2.312      ;
+; -1.373 ; bitcount[0]                      ; bitcount[8]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.294      ;
+; -1.351 ; bitcount[0]                      ; bitcount[7]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.272      ;
+; -1.321 ; bitcount[3]                      ; bitcount[8]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.242      ;
+; -1.319 ; bitcount[1]                      ; bitcount[6]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.240      ;
+; -1.316 ; bitcount[4]                      ; state.BYTES_GET_TDO_SET_TDI   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.237      ;
+; -1.313 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[8]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.234      ;
+; -1.313 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[7]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.234      ;
+; -1.313 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[6]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.234      ;
+; -1.313 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[5]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.234      ;
+; -1.313 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[4]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.234      ;
+; -1.313 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[3]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.234      ;
+; -1.313 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[1]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.234      ;
+; -1.313 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[0]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.234      ;
+; -1.313 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[2]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.234      ;
+; -1.307 ; bitcount[6]                      ; state.BYTES_GET_TDO_SET_TDI   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.228      ;
+; -1.302 ; bitcount[0]                      ; state.WAIT_FOR_N_RXF_LOW      ; CLK          ; CLK         ; 1.000        ; -0.079     ; 2.224      ;
+; -1.289 ; bitcount[1]                      ; bitcount[7]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.210      ;
+; -1.277 ; ioshifter[5]                     ; bitcount[8]                   ; CLK          ; CLK         ; 1.000        ; -0.082     ; 2.196      ;
+; -1.227 ; bitcount[2]                      ; bitcount[8]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.148      ;
+; -1.227 ; bitcount[0]                      ; bitcount[6]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.148      ;
+; -1.219 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[0]                  ; CLK          ; CLK         ; 1.000        ; -0.079     ; 2.141      ;
+; -1.219 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[1]                  ; CLK          ; CLK         ; 1.000        ; -0.079     ; 2.141      ;
+; -1.219 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[6]                  ; CLK          ; CLK         ; 1.000        ; -0.079     ; 2.141      ;
+; -1.219 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[7]                  ; CLK          ; CLK         ; 1.000        ; -0.079     ; 2.141      ;
+; -1.219 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[3]                  ; CLK          ; CLK         ; 1.000        ; -0.079     ; 2.141      ;
+; -1.219 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[4]                  ; CLK          ; CLK         ; 1.000        ; -0.079     ; 2.141      ;
+; -1.219 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[5]                  ; CLK          ; CLK         ; 1.000        ; -0.079     ; 2.141      ;
+; -1.219 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[2]                  ; CLK          ; CLK         ; 1.000        ; -0.079     ; 2.141      ;
+; -1.206 ; bitcount[2]                      ; bitcount[7]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.127      ;
+; -1.205 ; bitcount[0]                      ; bitcount[5]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.126      ;
+; -1.190 ; bitcount[2]                      ; state.WAIT_FOR_N_RXF_LOW      ; CLK          ; CLK         ; 1.000        ; -0.079     ; 2.112      ;
+; -1.189 ; bitcount[5]                      ; state.BYTES_SET_BITCOUNT      ; CLK          ; CLK         ; 1.000        ; -0.079     ; 2.111      ;
+; -1.189 ; bitcount[5]                      ; state.BITS_SET_PINS_FROM_DATA ; CLK          ; CLK         ; 1.000        ; -0.079     ; 2.111      ;
+; -1.181 ; bitcount[5]                      ; bitcount[8]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.102      ;
+; -1.175 ; bitcount[3]                      ; bitcount[6]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.096      ;
+; -1.173 ; bitcount[1]                      ; bitcount[4]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.094      ;
+; -1.145 ; bitcount[3]                      ; bitcount[7]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.066      ;
+; -1.143 ; bitcount[1]                      ; bitcount[5]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.064      ;
+; -1.135 ; state.BYTES_SET_BITCOUNT         ; bitcount[8]                   ; CLK          ; CLK         ; 1.000        ; -0.081     ; 2.055      ;
+; -1.135 ; state.BYTES_SET_BITCOUNT         ; bitcount[7]                   ; CLK          ; CLK         ; 1.000        ; -0.081     ; 2.055      ;
+; -1.135 ; state.BYTES_SET_BITCOUNT         ; bitcount[6]                   ; CLK          ; CLK         ; 1.000        ; -0.081     ; 2.055      ;
+; -1.135 ; state.BYTES_SET_BITCOUNT         ; bitcount[5]                   ; CLK          ; CLK         ; 1.000        ; -0.081     ; 2.055      ;
+; -1.135 ; state.BYTES_SET_BITCOUNT         ; bitcount[4]                   ; CLK          ; CLK         ; 1.000        ; -0.081     ; 2.055      ;
+; -1.135 ; state.BYTES_SET_BITCOUNT         ; bitcount[3]                   ; CLK          ; CLK         ; 1.000        ; -0.081     ; 2.055      ;
+; -1.135 ; state.BYTES_SET_BITCOUNT         ; bitcount[1]                   ; CLK          ; CLK         ; 1.000        ; -0.081     ; 2.055      ;
+; -1.135 ; state.BYTES_SET_BITCOUNT         ; bitcount[0]                   ; CLK          ; CLK         ; 1.000        ; -0.081     ; 2.055      ;
+; -1.135 ; state.BYTES_SET_BITCOUNT         ; bitcount[2]                   ; CLK          ; CLK         ; 1.000        ; -0.081     ; 2.055      ;
+; -1.126 ; ioshifter[0]                     ; B_TCK~reg0                    ; CLK          ; CLK         ; 1.000        ; -0.081     ; 2.046      ;
+; -1.124 ; ioshifter[6]                     ; state.WAIT_FOR_N_TXE_LOW      ; CLK          ; CLK         ; 1.000        ; -0.081     ; 2.044      ;
+; -1.110 ; bitcount[8]                      ; state.BYTES_SET_BITCOUNT      ; CLK          ; CLK         ; 1.000        ; -0.079     ; 2.032      ;
+; -1.110 ; bitcount[8]                      ; state.BITS_SET_PINS_FROM_DATA ; CLK          ; CLK         ; 1.000        ; -0.079     ; 2.032      ;
+; -1.106 ; bitcount[5]                      ; state.BYTES_GET_TDO_SET_TDI   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.027      ;
+; -1.105 ; ioshifter[0]                     ; B_TDI~reg0                    ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.026      ;
+; -1.092 ; bitcount[4]                      ; bitcount[8]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.013      ;
+; -1.081 ; bitcount[2]                      ; bitcount[6]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.002      ;
+; -1.081 ; bitcount[0]                      ; bitcount[4]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.002      ;
+; -1.076 ; bitcount[0]                      ; state.BYTES_GET_TDO_SET_TDI   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 1.997      ;
+; -1.060 ; bitcount[2]                      ; bitcount[5]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 1.981      ;
+; -1.059 ; bitcount[0]                      ; bitcount[3]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 1.980      ;
+; -1.058 ; bitcount[4]                      ; bitcount[7]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 1.979      ;
+; -1.056 ; bitcount[3]                      ; state.BYTES_SET_BITCOUNT      ; CLK          ; CLK         ; 1.000        ; -0.079     ; 1.978      ;
+; -1.056 ; bitcount[3]                      ; state.BITS_SET_PINS_FROM_DATA ; CLK          ; CLK         ; 1.000        ; -0.079     ; 1.978      ;
+; -1.053 ; state.BITS_SET_PINS_FROM_DATA    ; B_NCE~reg0                    ; CLK          ; CLK         ; 1.000        ; -0.080     ; 1.974      ;
+; -1.053 ; state.BITS_SET_PINS_FROM_DATA    ; B_NCS~reg0                    ; CLK          ; CLK         ; 1.000        ; -0.080     ; 1.974      ;
+; -1.050 ; ioshifter[4]                     ; B_TDI~reg0                    ; CLK          ; CLK         ; 1.000        ; -0.080     ; 1.971      ;
+; -1.048 ; bitcount[7]                      ; bitcount[8]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 1.969      ;
+; -1.046 ; state.BITS_SET_PINS_FROM_DATA    ; B_TDI~reg0                    ; CLK          ; CLK         ; 1.000        ; -0.079     ; 1.968      ;
+; -1.035 ; bitcount[5]                      ; bitcount[6]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 1.956      ;
+; -1.029 ; bitcount[3]                      ; bitcount[4]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 1.950      ;
+; -1.027 ; bitcount[1]                      ; bitcount[2]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 1.948      ;
+; -1.018 ; bitcount[1]                      ; state.WAIT_FOR_N_RXF_LOW      ; CLK          ; CLK         ; 1.000        ; -0.079     ; 1.940      ;
+; -1.005 ; bitcount[5]                      ; bitcount[7]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 1.926      ;
+; -0.999 ; bitcount[3]                      ; bitcount[5]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 1.920      ;
+; -0.997 ; bitcount[1]                      ; bitcount[3]                   ; CLK          ; CLK         ; 1.000        ; -0.080     ; 1.918      ;
++--------+----------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'CLK'                                                                                                              ;
++-------+----------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                        ; To Node                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.454 ; do_output                        ; do_output                     ; CLK          ; CLK         ; 0.000        ; 0.080      ; 0.746      ;
+; 0.454 ; carry_in                         ; carry_in                      ; CLK          ; CLK         ; 0.000        ; 0.080      ; 0.746      ;
+; 0.494 ; state.WAIT_FOR_N_RXF_LOW         ; state.SET_N_RD_LOW            ; CLK          ; CLK         ; 0.000        ; 0.080      ; 0.786      ;
+; 0.510 ; state.KEEP_N_RD_LOW              ; state.LATCH_DATA_FROM_HOST    ; CLK          ; CLK         ; 0.000        ; 0.080      ; 0.802      ;
+; 0.510 ; state.SET_WR_LOW                 ; state.OUTPUT_DISABLE          ; CLK          ; CLK         ; 0.000        ; 0.080      ; 0.802      ;
+; 0.510 ; state.BYTES_SET_BITCOUNT         ; do_output                     ; CLK          ; CLK         ; 0.000        ; 0.080      ; 0.802      ;
+; 0.511 ; state.WAIT_FOR_N_TXE_LOW         ; state.SET_WR_HIGH             ; CLK          ; CLK         ; 0.000        ; 0.080      ; 0.803      ;
+; 0.517 ; bitcount[8]                      ; bitcount[8]                   ; CLK          ; CLK         ; 0.000        ; 0.080      ; 0.809      ;
+; 0.650 ; do_output                        ; state.WAIT_FOR_N_TXE_LOW      ; CLK          ; CLK         ; 0.000        ; 0.080      ; 0.942      ;
+; 0.651 ; state.OUTPUT_ENABLE              ; state.SET_WR_LOW              ; CLK          ; CLK         ; 0.000        ; 0.080      ; 0.943      ;
+; 0.654 ; state.BYTES_KEEP_CLOCK_HIGH      ; B_TCK~reg0                    ; CLK          ; CLK         ; 0.000        ; 0.080      ; 0.946      ;
+; 0.700 ; state.SET_N_RD_LOW               ; state.KEEP_N_RD_LOW           ; CLK          ; CLK         ; 0.000        ; 0.081      ; 0.993      ;
+; 0.707 ; state.BYTES_KEEP_CLOCK_HIGH      ; state.BYTES_CLOCK_FINISH      ; CLK          ; CLK         ; 0.000        ; 0.080      ; 0.999      ;
+; 0.727 ; ioshifter[0]                     ; D[0]~reg0                     ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.019      ;
+; 0.742 ; ioshifter[5]                     ; D[5]~reg0                     ; CLK          ; CLK         ; 0.000        ; 0.083      ; 1.037      ;
+; 0.743 ; ioshifter[2]                     ; B_NCE~reg0                    ; CLK          ; CLK         ; 0.000        ; 0.079      ; 1.034      ;
+; 0.743 ; ioshifter[5]                     ; B_OE~reg0                     ; CLK          ; CLK         ; 0.000        ; 0.083      ; 1.038      ;
+; 0.746 ; bitcount[4]                      ; bitcount[4]                   ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.038      ;
+; 0.747 ; bitcount[1]                      ; bitcount[1]                   ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.039      ;
+; 0.747 ; bitcount[2]                      ; bitcount[2]                   ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.039      ;
+; 0.747 ; state.OUTPUT_ENABLE              ; WR~reg0                       ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.039      ;
+; 0.748 ; bitcount[6]                      ; bitcount[6]                   ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.040      ;
+; 0.748 ; bitcount[3]                      ; bitcount[3]                   ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.040      ;
+; 0.750 ; bitcount[5]                      ; bitcount[5]                   ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.042      ;
+; 0.767 ; bitcount[7]                      ; bitcount[7]                   ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.059      ;
+; 0.770 ; bitcount[0]                      ; bitcount[0]                   ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.062      ;
+; 0.795 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[5]                  ; CLK          ; CLK         ; 0.000        ; 0.081      ; 1.088      ;
+; 0.796 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[6]                  ; CLK          ; CLK         ; 0.000        ; 0.081      ; 1.089      ;
+; 0.796 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[2]                  ; CLK          ; CLK         ; 0.000        ; 0.081      ; 1.089      ;
+; 0.797 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[4]                  ; CLK          ; CLK         ; 0.000        ; 0.081      ; 1.090      ;
+; 0.798 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[7]                  ; CLK          ; CLK         ; 0.000        ; 0.081      ; 1.091      ;
+; 0.798 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[3]                  ; CLK          ; CLK         ; 0.000        ; 0.081      ; 1.091      ;
+; 0.833 ; B_NCS~reg0                       ; carry_in                      ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.125      ;
+; 0.846 ; state.SET_N_RD_HIGH              ; state.BITS_SET_PINS_FROM_DATA ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.138      ;
+; 0.847 ; state.SET_N_RD_HIGH              ; state.BYTES_SET_BITCOUNT      ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.139      ;
+; 0.853 ; ioshifter[6]                     ; ioshifter[5]                  ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.145      ;
+; 0.856 ; state.BYTES_CLOCK_FINISH         ; state.WAIT_FOR_N_RXF_LOW      ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.148      ;
+; 0.864 ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; ioshifter[1]                  ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.156      ;
+; 0.870 ; ioshifter[1]                     ; ioshifter[0]                  ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.162      ;
+; 0.872 ; ioshifter[1]                     ; D[1]~reg0                     ; CLK          ; CLK         ; 0.000        ; 0.083      ; 1.167      ;
+; 0.875 ; ioshifter[1]                     ; B_TMS~reg0                    ; CLK          ; CLK         ; 0.000        ; 0.083      ; 1.170      ;
+; 0.891 ; state.SET_WR_HIGH                ; WR~reg0                       ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.183      ;
+; 0.893 ; ioshifter[7]                     ; state.BITS_SET_PINS_FROM_DATA ; CLK          ; CLK         ; 0.000        ; 0.079      ; 1.184      ;
+; 0.907 ; ioshifter[7]                     ; state.BYTES_SET_BITCOUNT      ; CLK          ; CLK         ; 0.000        ; 0.079      ; 1.198      ;
+; 0.929 ; ioshifter[6]                     ; D[6]~reg0                     ; CLK          ; CLK         ; 0.000        ; 0.079      ; 1.220      ;
+; 0.949 ; state.SET_WR_HIGH                ; state.OUTPUT_ENABLE           ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.241      ;
+; 0.968 ; ioshifter[6]                     ; do_output                     ; CLK          ; CLK         ; 0.000        ; 0.079      ; 1.259      ;
+; 0.985 ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; state.BYTES_KEEP_CLOCK_HIGH   ; CLK          ; CLK         ; 0.000        ; 0.079      ; 1.276      ;
+; 0.988 ; carry_in                         ; ioshifter[7]                  ; CLK          ; CLK         ; 0.000        ; 0.081      ; 1.281      ;
+; 1.017 ; state.BYTES_CLOCK_FINISH         ; state.WAIT_FOR_N_TXE_LOW      ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.309      ;
+; 1.024 ; state.BYTES_CLOCK_FINISH         ; state.BYTES_GET_TDO_SET_TDI   ; CLK          ; CLK         ; 0.000        ; 0.079      ; 1.315      ;
+; 1.030 ; state.WAIT_FOR_N_RXF_LOW         ; state.WAIT_FOR_N_RXF_LOW      ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.322      ;
+; 1.032 ; state.BYTES_CLOCK_FINISH         ; B_TCK~reg0                    ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.324      ;
+; 1.036 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[8]                   ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.328      ;
+; 1.036 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[7]                   ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.328      ;
+; 1.036 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[6]                   ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.328      ;
+; 1.036 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[5]                   ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.328      ;
+; 1.036 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[4]                   ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.328      ;
+; 1.036 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[3]                   ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.328      ;
+; 1.036 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[1]                   ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.328      ;
+; 1.036 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[0]                   ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.328      ;
+; 1.036 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[2]                   ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.328      ;
+; 1.036 ; state.OUTPUT_DISABLE             ; state.WAIT_FOR_N_RXF_LOW      ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.328      ;
+; 1.075 ; state.OUTPUT_ENABLE              ; D[5]~en                       ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.367      ;
+; 1.076 ; state.OUTPUT_ENABLE              ; D[0]~en                       ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.368      ;
+; 1.077 ; state.OUTPUT_ENABLE              ; D[3]~en                       ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.369      ;
+; 1.078 ; state.OUTPUT_ENABLE              ; D[6]~en                       ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.370      ;
+; 1.078 ; state.OUTPUT_ENABLE              ; D[7]~en                       ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.370      ;
+; 1.078 ; state.SET_N_RD_HIGH              ; state.BYTES_GET_TDO_SET_TDI   ; CLK          ; CLK         ; 0.000        ; 0.079      ; 1.369      ;
+; 1.079 ; state.OUTPUT_ENABLE              ; D[4]~en                       ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.371      ;
+; 1.080 ; state.OUTPUT_ENABLE              ; D[1]~en                       ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.372      ;
+; 1.081 ; state.OUTPUT_ENABLE              ; D[2]~en                       ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.373      ;
+; 1.100 ; bitcount[1]                      ; bitcount[2]                   ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.392      ;
+; 1.101 ; state.BYTES_GET_TDO_SET_TDI      ; carry_in                      ; CLK          ; CLK         ; 0.000        ; 0.081      ; 1.394      ;
+; 1.101 ; bitcount[3]                      ; bitcount[4]                   ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.393      ;
+; 1.102 ; bitcount[5]                      ; bitcount[6]                   ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.394      ;
+; 1.108 ; bitcount[0]                      ; bitcount[1]                   ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.400      ;
+; 1.109 ; bitcount[4]                      ; bitcount[5]                   ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.401      ;
+; 1.110 ; bitcount[2]                      ; bitcount[3]                   ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.402      ;
+; 1.111 ; bitcount[6]                      ; bitcount[7]                   ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.403      ;
+; 1.111 ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; ioshifter[0]                  ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.403      ;
+; 1.117 ; bitcount[0]                      ; bitcount[2]                   ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.409      ;
+; 1.118 ; bitcount[4]                      ; bitcount[6]                   ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.410      ;
+; 1.119 ; bitcount[7]                      ; bitcount[8]                   ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.411      ;
+; 1.119 ; bitcount[2]                      ; bitcount[4]                   ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.411      ;
+; 1.120 ; bitcount[6]                      ; bitcount[8]                   ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.412      ;
+; 1.121 ; ioshifter[3]                     ; D[3]~reg0                     ; CLK          ; CLK         ; 0.000        ; 0.078      ; 1.411      ;
+; 1.123 ; ioshifter[2]                     ; ioshifter[1]                  ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.415      ;
+; 1.136 ; ioshifter[7]                     ; ioshifter[6]                  ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.428      ;
+; 1.144 ; bitcount[1]                      ; state.WAIT_FOR_N_TXE_LOW      ; CLK          ; CLK         ; 0.000        ; 0.081      ; 1.437      ;
+; 1.148 ; ioshifter[2]                     ; D[2]~reg0                     ; CLK          ; CLK         ; 0.000        ; 0.078      ; 1.438      ;
+; 1.148 ; state.WAIT_FOR_N_TXE_LOW         ; state.WAIT_FOR_N_TXE_LOW      ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.440      ;
+; 1.157 ; ioshifter[4]                     ; bitcount[7]                   ; CLK          ; CLK         ; 0.000        ; 0.078      ; 1.447      ;
+; 1.169 ; state.SET_WR_LOW                 ; D[5]~en                       ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.461      ;
+; 1.170 ; state.SET_WR_LOW                 ; D[0]~en                       ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.462      ;
+; 1.171 ; state.SET_WR_LOW                 ; D[3]~en                       ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.463      ;
+; 1.172 ; state.SET_WR_LOW                 ; D[6]~en                       ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.464      ;
+; 1.172 ; state.SET_WR_LOW                 ; D[7]~en                       ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.464      ;
+; 1.173 ; state.SET_WR_LOW                 ; D[4]~en                       ; CLK          ; CLK         ; 0.000        ; 0.080      ; 1.465      ;
+; 1.174 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[0]                  ; CLK          ; CLK         ; 0.000        ; 0.081      ; 1.467      ;
++-------+----------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+
+
+-----------------------------------------------
+; Slow 1200mV 85C Model Metastability Summary ;
+-----------------------------------------------
+No synchronizer chains to report.
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                         ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 411.69 MHz ; 250.0 MHz       ; CLK        ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------+
+; Slow 1200mV 0C Model Setup Summary ;
++-------+--------+-------------------+
+; Clock ; Slack  ; End Point TNS     ;
++-------+--------+-------------------+
+; CLK   ; -1.429 ; -44.292           ;
++-------+--------+-------------------+
+
+
++-----------------------------------+
+; Slow 1200mV 0C Model Hold Summary ;
++-------+-------+-------------------+
+; Clock ; Slack ; End Point TNS     ;
++-------+-------+-------------------+
+; CLK   ; 0.402 ; 0.000             ;
++-------+-------+-------------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++-------+--------+---------------------------------+
+; Clock ; Slack  ; End Point TNS                   ;
++-------+--------+---------------------------------+
+; CLK   ; -3.000 ; -90.733                         ;
++-------+--------+---------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'CLK'                                                                                                               ;
++--------+----------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                        ; To Node                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.429 ; state.BITS_SET_PINS_FROM_DATA    ; state.WAIT_FOR_N_TXE_LOW      ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.359      ;
+; -1.414 ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; ioshifter[0]                  ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.344      ;
+; -1.414 ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; ioshifter[1]                  ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.344      ;
+; -1.414 ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; ioshifter[6]                  ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.344      ;
+; -1.414 ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; ioshifter[7]                  ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.344      ;
+; -1.414 ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; ioshifter[3]                  ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.344      ;
+; -1.414 ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; ioshifter[4]                  ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.344      ;
+; -1.414 ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; ioshifter[5]                  ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.344      ;
+; -1.414 ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; ioshifter[2]                  ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.344      ;
+; -1.405 ; ioshifter[3]                     ; ioshifter[2]                  ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.335      ;
+; -1.326 ; state.LATCH_DATA_FROM_HOST       ; ioshifter[0]                  ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.256      ;
+; -1.326 ; state.LATCH_DATA_FROM_HOST       ; ioshifter[1]                  ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.256      ;
+; -1.326 ; state.LATCH_DATA_FROM_HOST       ; ioshifter[6]                  ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.256      ;
+; -1.326 ; state.LATCH_DATA_FROM_HOST       ; ioshifter[7]                  ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.256      ;
+; -1.326 ; state.LATCH_DATA_FROM_HOST       ; ioshifter[3]                  ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.256      ;
+; -1.326 ; state.LATCH_DATA_FROM_HOST       ; ioshifter[4]                  ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.256      ;
+; -1.326 ; state.LATCH_DATA_FROM_HOST       ; ioshifter[5]                  ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.256      ;
+; -1.326 ; state.LATCH_DATA_FROM_HOST       ; ioshifter[2]                  ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.256      ;
+; -1.277 ; state.BITS_SET_PINS_FROM_DATA    ; B_TCK~reg0                    ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.207      ;
+; -1.273 ; ioshifter[5]                     ; ioshifter[4]                  ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.203      ;
+; -1.255 ; state.BITS_SET_PINS_FROM_DATA    ; state.WAIT_FOR_N_RXF_LOW      ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.185      ;
+; -1.224 ; bitcount[4]                      ; state.BYTES_SET_BITCOUNT      ; CLK          ; CLK         ; 1.000        ; -0.071     ; 2.155      ;
+; -1.223 ; bitcount[4]                      ; state.BITS_SET_PINS_FROM_DATA ; CLK          ; CLK         ; 1.000        ; -0.071     ; 2.154      ;
+; -1.216 ; bitcount[6]                      ; state.BYTES_SET_BITCOUNT      ; CLK          ; CLK         ; 1.000        ; -0.071     ; 2.147      ;
+; -1.215 ; bitcount[6]                      ; state.BITS_SET_PINS_FROM_DATA ; CLK          ; CLK         ; 1.000        ; -0.071     ; 2.146      ;
+; -1.200 ; bitcount[1]                      ; bitcount[8]                   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.130      ;
+; -1.173 ; ioshifter[5]                     ; bitcount[8]                   ; CLK          ; CLK         ; 1.000        ; -0.074     ; 2.101      ;
+; -1.156 ; bitcount[0]                      ; state.WAIT_FOR_N_RXF_LOW      ; CLK          ; CLK         ; 1.000        ; -0.071     ; 2.087      ;
+; -1.124 ; bitcount[0]                      ; bitcount[7]                   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.054      ;
+; -1.115 ; bitcount[0]                      ; bitcount[8]                   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.045      ;
+; -1.112 ; bitcount[4]                      ; state.BYTES_GET_TDO_SET_TDI   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.042      ;
+; -1.112 ; bitcount[6]                      ; state.BYTES_GET_TDO_SET_TDI   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.042      ;
+; -1.111 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[8]                   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.041      ;
+; -1.111 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[7]                   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.041      ;
+; -1.111 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[6]                   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.041      ;
+; -1.111 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[5]                   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.041      ;
+; -1.111 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[4]                   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.041      ;
+; -1.111 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[3]                   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.041      ;
+; -1.111 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[1]                   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.041      ;
+; -1.111 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[0]                   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.041      ;
+; -1.111 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[2]                   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.041      ;
+; -1.080 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[0]                  ; CLK          ; CLK         ; 1.000        ; -0.071     ; 2.011      ;
+; -1.080 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[1]                  ; CLK          ; CLK         ; 1.000        ; -0.071     ; 2.011      ;
+; -1.080 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[6]                  ; CLK          ; CLK         ; 1.000        ; -0.071     ; 2.011      ;
+; -1.080 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[7]                  ; CLK          ; CLK         ; 1.000        ; -0.071     ; 2.011      ;
+; -1.080 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[3]                  ; CLK          ; CLK         ; 1.000        ; -0.071     ; 2.011      ;
+; -1.080 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[4]                  ; CLK          ; CLK         ; 1.000        ; -0.071     ; 2.011      ;
+; -1.080 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[5]                  ; CLK          ; CLK         ; 1.000        ; -0.071     ; 2.011      ;
+; -1.080 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[2]                  ; CLK          ; CLK         ; 1.000        ; -0.071     ; 2.011      ;
+; -1.076 ; bitcount[3]                      ; bitcount[8]                   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.006      ;
+; -1.074 ; bitcount[1]                      ; bitcount[6]                   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.004      ;
+; -1.047 ; bitcount[5]                      ; state.BYTES_SET_BITCOUNT      ; CLK          ; CLK         ; 1.000        ; -0.071     ; 1.978      ;
+; -1.046 ; bitcount[5]                      ; state.BITS_SET_PINS_FROM_DATA ; CLK          ; CLK         ; 1.000        ; -0.071     ; 1.977      ;
+; -1.035 ; bitcount[1]                      ; bitcount[7]                   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 1.965      ;
+; -1.034 ; ioshifter[0]                     ; B_TCK~reg0                    ; CLK          ; CLK         ; 1.000        ; -0.073     ; 1.963      ;
+; -1.034 ; bitcount[2]                      ; state.WAIT_FOR_N_RXF_LOW      ; CLK          ; CLK         ; 1.000        ; -0.071     ; 1.965      ;
+; -1.006 ; state.BYTES_SET_BITCOUNT         ; bitcount[8]                   ; CLK          ; CLK         ; 1.000        ; -0.073     ; 1.935      ;
+; -1.006 ; state.BYTES_SET_BITCOUNT         ; bitcount[7]                   ; CLK          ; CLK         ; 1.000        ; -0.073     ; 1.935      ;
+; -1.006 ; state.BYTES_SET_BITCOUNT         ; bitcount[6]                   ; CLK          ; CLK         ; 1.000        ; -0.073     ; 1.935      ;
+; -1.006 ; state.BYTES_SET_BITCOUNT         ; bitcount[5]                   ; CLK          ; CLK         ; 1.000        ; -0.073     ; 1.935      ;
+; -1.006 ; state.BYTES_SET_BITCOUNT         ; bitcount[4]                   ; CLK          ; CLK         ; 1.000        ; -0.073     ; 1.935      ;
+; -1.006 ; state.BYTES_SET_BITCOUNT         ; bitcount[3]                   ; CLK          ; CLK         ; 1.000        ; -0.073     ; 1.935      ;
+; -1.006 ; state.BYTES_SET_BITCOUNT         ; bitcount[1]                   ; CLK          ; CLK         ; 1.000        ; -0.073     ; 1.935      ;
+; -1.006 ; state.BYTES_SET_BITCOUNT         ; bitcount[0]                   ; CLK          ; CLK         ; 1.000        ; -0.073     ; 1.935      ;
+; -1.006 ; state.BYTES_SET_BITCOUNT         ; bitcount[2]                   ; CLK          ; CLK         ; 1.000        ; -0.073     ; 1.935      ;
+; -1.005 ; ioshifter[0]                     ; B_TDI~reg0                    ; CLK          ; CLK         ; 1.000        ; -0.072     ; 1.935      ;
+; -0.999 ; bitcount[2]                      ; bitcount[7]                   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 1.929      ;
+; -0.998 ; bitcount[0]                      ; bitcount[5]                   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 1.928      ;
+; -0.990 ; bitcount[2]                      ; bitcount[8]                   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 1.920      ;
+; -0.989 ; bitcount[0]                      ; bitcount[6]                   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 1.919      ;
+; -0.968 ; bitcount[8]                      ; state.BYTES_SET_BITCOUNT      ; CLK          ; CLK         ; 1.000        ; -0.071     ; 1.899      ;
+; -0.967 ; bitcount[8]                      ; state.BITS_SET_PINS_FROM_DATA ; CLK          ; CLK         ; 1.000        ; -0.071     ; 1.898      ;
+; -0.956 ; bitcount[5]                      ; bitcount[8]                   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 1.886      ;
+; -0.955 ; ioshifter[4]                     ; B_TDI~reg0                    ; CLK          ; CLK         ; 1.000        ; -0.072     ; 1.885      ;
+; -0.950 ; bitcount[3]                      ; bitcount[6]                   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 1.880      ;
+; -0.948 ; bitcount[1]                      ; bitcount[4]                   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 1.878      ;
+; -0.933 ; state.BITS_SET_PINS_FROM_DATA    ; B_NCE~reg0                    ; CLK          ; CLK         ; 1.000        ; -0.072     ; 1.863      ;
+; -0.933 ; state.BITS_SET_PINS_FROM_DATA    ; B_NCS~reg0                    ; CLK          ; CLK         ; 1.000        ; -0.072     ; 1.863      ;
+; -0.927 ; ioshifter[6]                     ; state.WAIT_FOR_N_TXE_LOW      ; CLK          ; CLK         ; 1.000        ; -0.073     ; 1.856      ;
+; -0.924 ; bitcount[5]                      ; state.BYTES_GET_TDO_SET_TDI   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 1.854      ;
+; -0.923 ; bitcount[3]                      ; state.BYTES_SET_BITCOUNT      ; CLK          ; CLK         ; 1.000        ; -0.071     ; 1.854      ;
+; -0.922 ; bitcount[3]                      ; state.BITS_SET_PINS_FROM_DATA ; CLK          ; CLK         ; 1.000        ; -0.071     ; 1.853      ;
+; -0.911 ; bitcount[3]                      ; bitcount[7]                   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 1.841      ;
+; -0.909 ; bitcount[1]                      ; bitcount[5]                   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 1.839      ;
+; -0.902 ; bitcount[1]                      ; state.WAIT_FOR_N_RXF_LOW      ; CLK          ; CLK         ; 1.000        ; -0.071     ; 1.833      ;
+; -0.877 ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; B_TCK~reg0                    ; CLK          ; CLK         ; 1.000        ; -0.073     ; 1.806      ;
+; -0.875 ; bitcount[4]                      ; bitcount[8]                   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 1.805      ;
+; -0.873 ; bitcount[2]                      ; bitcount[5]                   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 1.803      ;
+; -0.872 ; bitcount[0]                      ; bitcount[3]                   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 1.802      ;
+; -0.871 ; bitcount[4]                      ; bitcount[7]                   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 1.801      ;
+; -0.867 ; bitcount[0]                      ; state.BYTES_GET_TDO_SET_TDI   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 1.797      ;
+; -0.864 ; bitcount[2]                      ; bitcount[6]                   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 1.794      ;
+; -0.863 ; bitcount[0]                      ; bitcount[4]                   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 1.793      ;
+; -0.854 ; state.BITS_SET_PINS_FROM_DATA    ; B_TDI~reg0                    ; CLK          ; CLK         ; 1.000        ; -0.071     ; 1.785      ;
+; -0.842 ; bitcount[7]                      ; bitcount[8]                   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 1.772      ;
+; -0.831 ; state.BITS_SET_PINS_FROM_DATA    ; B_TMS~reg0                    ; CLK          ; CLK         ; 1.000        ; -0.071     ; 1.762      ;
+; -0.831 ; state.BITS_SET_PINS_FROM_DATA    ; B_OE~reg0                     ; CLK          ; CLK         ; 1.000        ; -0.071     ; 1.762      ;
+; -0.830 ; bitcount[5]                      ; bitcount[6]                   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 1.760      ;
+; -0.824 ; bitcount[3]                      ; bitcount[4]                   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 1.754      ;
+; -0.822 ; bitcount[1]                      ; bitcount[2]                   ; CLK          ; CLK         ; 1.000        ; -0.072     ; 1.752      ;
++--------+----------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'CLK'                                                                                                               ;
++-------+----------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                        ; To Node                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.402 ; do_output                        ; do_output                     ; CLK          ; CLK         ; 0.000        ; 0.072      ; 0.669      ;
+; 0.402 ; carry_in                         ; carry_in                      ; CLK          ; CLK         ; 0.000        ; 0.072      ; 0.669      ;
+; 0.456 ; state.WAIT_FOR_N_RXF_LOW         ; state.SET_N_RD_LOW            ; CLK          ; CLK         ; 0.000        ; 0.072      ; 0.723      ;
+; 0.470 ; state.BYTES_SET_BITCOUNT         ; do_output                     ; CLK          ; CLK         ; 0.000        ; 0.072      ; 0.737      ;
+; 0.477 ; state.SET_WR_LOW                 ; state.OUTPUT_DISABLE          ; CLK          ; CLK         ; 0.000        ; 0.072      ; 0.744      ;
+; 0.478 ; bitcount[8]                      ; bitcount[8]                   ; CLK          ; CLK         ; 0.000        ; 0.072      ; 0.745      ;
+; 0.478 ; state.WAIT_FOR_N_TXE_LOW         ; state.SET_WR_HIGH             ; CLK          ; CLK         ; 0.000        ; 0.072      ; 0.745      ;
+; 0.479 ; state.KEEP_N_RD_LOW              ; state.LATCH_DATA_FROM_HOST    ; CLK          ; CLK         ; 0.000        ; 0.072      ; 0.746      ;
+; 0.608 ; do_output                        ; state.WAIT_FOR_N_TXE_LOW      ; CLK          ; CLK         ; 0.000        ; 0.072      ; 0.875      ;
+; 0.609 ; state.BYTES_KEEP_CLOCK_HIGH      ; B_TCK~reg0                    ; CLK          ; CLK         ; 0.000        ; 0.072      ; 0.876      ;
+; 0.609 ; state.OUTPUT_ENABLE              ; state.SET_WR_LOW              ; CLK          ; CLK         ; 0.000        ; 0.072      ; 0.876      ;
+; 0.620 ; state.SET_N_RD_LOW               ; state.KEEP_N_RD_LOW           ; CLK          ; CLK         ; 0.000        ; 0.073      ; 0.888      ;
+; 0.653 ; state.BYTES_KEEP_CLOCK_HIGH      ; state.BYTES_CLOCK_FINISH      ; CLK          ; CLK         ; 0.000        ; 0.072      ; 0.920      ;
+; 0.658 ; ioshifter[5]                     ; D[5]~reg0                     ; CLK          ; CLK         ; 0.000        ; 0.072      ; 0.925      ;
+; 0.659 ; ioshifter[5]                     ; B_OE~reg0                     ; CLK          ; CLK         ; 0.000        ; 0.072      ; 0.926      ;
+; 0.661 ; ioshifter[2]                     ; B_NCE~reg0                    ; CLK          ; CLK         ; 0.000        ; 0.071      ; 0.927      ;
+; 0.669 ; ioshifter[0]                     ; D[0]~reg0                     ; CLK          ; CLK         ; 0.000        ; 0.072      ; 0.936      ;
+; 0.693 ; bitcount[1]                      ; bitcount[1]                   ; CLK          ; CLK         ; 0.000        ; 0.072      ; 0.960      ;
+; 0.694 ; bitcount[4]                      ; bitcount[4]                   ; CLK          ; CLK         ; 0.000        ; 0.072      ; 0.961      ;
+; 0.694 ; bitcount[3]                      ; bitcount[3]                   ; CLK          ; CLK         ; 0.000        ; 0.072      ; 0.961      ;
+; 0.694 ; state.OUTPUT_ENABLE              ; WR~reg0                       ; CLK          ; CLK         ; 0.000        ; 0.072      ; 0.961      ;
+; 0.695 ; bitcount[2]                      ; bitcount[2]                   ; CLK          ; CLK         ; 0.000        ; 0.072      ; 0.962      ;
+; 0.697 ; bitcount[6]                      ; bitcount[6]                   ; CLK          ; CLK         ; 0.000        ; 0.072      ; 0.964      ;
+; 0.700 ; bitcount[5]                      ; bitcount[5]                   ; CLK          ; CLK         ; 0.000        ; 0.072      ; 0.967      ;
+; 0.713 ; bitcount[7]                      ; bitcount[7]                   ; CLK          ; CLK         ; 0.000        ; 0.072      ; 0.980      ;
+; 0.721 ; bitcount[0]                      ; bitcount[0]                   ; CLK          ; CLK         ; 0.000        ; 0.072      ; 0.988      ;
+; 0.740 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[5]                  ; CLK          ; CLK         ; 0.000        ; 0.073      ; 1.008      ;
+; 0.740 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[2]                  ; CLK          ; CLK         ; 0.000        ; 0.073      ; 1.008      ;
+; 0.741 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[6]                  ; CLK          ; CLK         ; 0.000        ; 0.073      ; 1.009      ;
+; 0.742 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[4]                  ; CLK          ; CLK         ; 0.000        ; 0.073      ; 1.010      ;
+; 0.743 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[7]                  ; CLK          ; CLK         ; 0.000        ; 0.073      ; 1.011      ;
+; 0.743 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[3]                  ; CLK          ; CLK         ; 0.000        ; 0.073      ; 1.011      ;
+; 0.743 ; B_NCS~reg0                       ; carry_in                      ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.010      ;
+; 0.755 ; state.SET_N_RD_HIGH              ; state.BYTES_SET_BITCOUNT      ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.022      ;
+; 0.755 ; state.SET_N_RD_HIGH              ; state.BITS_SET_PINS_FROM_DATA ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.022      ;
+; 0.774 ; state.BYTES_CLOCK_FINISH         ; state.WAIT_FOR_N_RXF_LOW      ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.041      ;
+; 0.778 ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; ioshifter[1]                  ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.045      ;
+; 0.783 ; ioshifter[6]                     ; ioshifter[5]                  ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.050      ;
+; 0.798 ; ioshifter[1]                     ; ioshifter[0]                  ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.065      ;
+; 0.808 ; ioshifter[1]                     ; D[1]~reg0                     ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.075      ;
+; 0.811 ; ioshifter[1]                     ; B_TMS~reg0                    ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.078      ;
+; 0.813 ; ioshifter[7]                     ; state.BITS_SET_PINS_FROM_DATA ; CLK          ; CLK         ; 0.000        ; 0.071      ; 1.079      ;
+; 0.813 ; state.SET_WR_HIGH                ; WR~reg0                       ; CLK          ; CLK         ; 0.000        ; 0.074      ; 1.082      ;
+; 0.832 ; ioshifter[7]                     ; state.BYTES_SET_BITCOUNT      ; CLK          ; CLK         ; 0.000        ; 0.071      ; 1.098      ;
+; 0.875 ; state.SET_WR_HIGH                ; state.OUTPUT_ENABLE           ; CLK          ; CLK         ; 0.000        ; 0.074      ; 1.144      ;
+; 0.878 ; ioshifter[6]                     ; D[6]~reg0                     ; CLK          ; CLK         ; 0.000        ; 0.071      ; 1.144      ;
+; 0.890 ; ioshifter[6]                     ; do_output                     ; CLK          ; CLK         ; 0.000        ; 0.071      ; 1.156      ;
+; 0.897 ; carry_in                         ; ioshifter[7]                  ; CLK          ; CLK         ; 0.000        ; 0.073      ; 1.165      ;
+; 0.903 ; state.BYTES_CLOCK_FINISH         ; state.WAIT_FOR_N_TXE_LOW      ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.170      ;
+; 0.904 ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; state.BYTES_KEEP_CLOCK_HIGH   ; CLK          ; CLK         ; 0.000        ; 0.071      ; 1.170      ;
+; 0.921 ; state.BYTES_CLOCK_FINISH         ; state.BYTES_GET_TDO_SET_TDI   ; CLK          ; CLK         ; 0.000        ; 0.071      ; 1.187      ;
+; 0.923 ; state.BYTES_CLOCK_FINISH         ; B_TCK~reg0                    ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.190      ;
+; 0.924 ; state.OUTPUT_DISABLE             ; state.WAIT_FOR_N_RXF_LOW      ; CLK          ; CLK         ; 0.000        ; 0.070      ; 1.189      ;
+; 0.949 ; state.WAIT_FOR_N_RXF_LOW         ; state.WAIT_FOR_N_RXF_LOW      ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.216      ;
+; 0.950 ; state.OUTPUT_ENABLE              ; D[5]~en                       ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.217      ;
+; 0.951 ; state.OUTPUT_ENABLE              ; D[0]~en                       ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.218      ;
+; 0.952 ; state.OUTPUT_ENABLE              ; D[3]~en                       ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.219      ;
+; 0.953 ; state.OUTPUT_ENABLE              ; D[6]~en                       ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.220      ;
+; 0.953 ; state.OUTPUT_ENABLE              ; D[7]~en                       ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.220      ;
+; 0.954 ; state.OUTPUT_ENABLE              ; D[4]~en                       ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.221      ;
+; 0.955 ; state.OUTPUT_ENABLE              ; D[1]~en                       ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.222      ;
+; 0.955 ; state.OUTPUT_ENABLE              ; D[2]~en                       ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.222      ;
+; 0.960 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[8]                   ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.227      ;
+; 0.960 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[7]                   ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.227      ;
+; 0.960 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[6]                   ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.227      ;
+; 0.960 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[5]                   ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.227      ;
+; 0.960 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[4]                   ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.227      ;
+; 0.960 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[3]                   ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.227      ;
+; 0.960 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[1]                   ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.227      ;
+; 0.960 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[0]                   ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.227      ;
+; 0.960 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[2]                   ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.227      ;
+; 0.965 ; state.SET_N_RD_HIGH              ; state.BYTES_GET_TDO_SET_TDI   ; CLK          ; CLK         ; 0.000        ; 0.071      ; 1.231      ;
+; 0.981 ; state.BYTES_GET_TDO_SET_TDI      ; carry_in                      ; CLK          ; CLK         ; 0.000        ; 0.073      ; 1.249      ;
+; 0.998 ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; ioshifter[0]                  ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.265      ;
+; 0.999 ; ioshifter[3]                     ; D[3]~reg0                     ; CLK          ; CLK         ; 0.000        ; 0.070      ; 1.264      ;
+; 1.003 ; ioshifter[2]                     ; ioshifter[1]                  ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.270      ;
+; 1.013 ; bitcount[1]                      ; bitcount[2]                   ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.280      ;
+; 1.014 ; bitcount[3]                      ; bitcount[4]                   ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.281      ;
+; 1.014 ; ioshifter[7]                     ; ioshifter[6]                  ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.281      ;
+; 1.015 ; bitcount[4]                      ; bitcount[5]                   ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.282      ;
+; 1.016 ; bitcount[1]                      ; state.WAIT_FOR_N_TXE_LOW      ; CLK          ; CLK         ; 0.000        ; 0.073      ; 1.284      ;
+; 1.016 ; bitcount[0]                      ; bitcount[1]                   ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.283      ;
+; 1.017 ; bitcount[2]                      ; bitcount[3]                   ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.284      ;
+; 1.019 ; bitcount[6]                      ; bitcount[7]                   ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.286      ;
+; 1.021 ; bitcount[5]                      ; bitcount[6]                   ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.288      ;
+; 1.023 ; ioshifter[2]                     ; D[2]~reg0                     ; CLK          ; CLK         ; 0.000        ; 0.070      ; 1.288      ;
+; 1.030 ; bitcount[4]                      ; bitcount[6]                   ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.297      ;
+; 1.031 ; bitcount[0]                      ; bitcount[2]                   ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.298      ;
+; 1.032 ; bitcount[2]                      ; bitcount[4]                   ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.299      ;
+; 1.034 ; bitcount[7]                      ; bitcount[8]                   ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.301      ;
+; 1.034 ; bitcount[6]                      ; bitcount[8]                   ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.301      ;
+; 1.039 ; state.SET_WR_LOW                 ; D[5]~en                       ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.306      ;
+; 1.040 ; state.SET_WR_LOW                 ; D[0]~en                       ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.307      ;
+; 1.041 ; state.SET_WR_LOW                 ; D[3]~en                       ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.308      ;
+; 1.042 ; state.SET_WR_LOW                 ; D[6]~en                       ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.309      ;
+; 1.042 ; state.SET_WR_LOW                 ; D[7]~en                       ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.309      ;
+; 1.043 ; state.SET_WR_LOW                 ; D[4]~en                       ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.310      ;
+; 1.044 ; ioshifter[4]                     ; bitcount[7]                   ; CLK          ; CLK         ; 0.000        ; 0.070      ; 1.309      ;
+; 1.044 ; state.SET_WR_LOW                 ; D[1]~en                       ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.311      ;
+; 1.044 ; state.SET_WR_LOW                 ; D[2]~en                       ; CLK          ; CLK         ; 0.000        ; 0.072      ; 1.311      ;
++-------+----------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+
+
+----------------------------------------------
+; Slow 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++------------------------------------+
+; Fast 1200mV 0C Model Setup Summary ;
++-------+--------+-------------------+
+; Clock ; Slack  ; End Point TNS     ;
++-------+--------+-------------------+
+; CLK   ; -0.157 ; -1.331            ;
++-------+--------+-------------------+
+
+
++-----------------------------------+
+; Fast 1200mV 0C Model Hold Summary ;
++-------+-------+-------------------+
+; Clock ; Slack ; End Point TNS     ;
++-------+-------+-------------------+
+; CLK   ; 0.187 ; 0.000             ;
++-------+-------+-------------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++-------+--------+---------------------------------+
+; Clock ; Slack  ; End Point TNS                   ;
++-------+--------+---------------------------------+
+; CLK   ; -3.000 ; -79.336                         ;
++-------+--------+---------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'CLK'                                                                                                               ;
++--------+----------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                        ; To Node                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.157 ; state.BITS_SET_PINS_FROM_DATA    ; state.WAIT_FOR_N_TXE_LOW      ; CLK          ; CLK         ; 1.000        ; -0.036     ; 1.108      ;
+; -0.123 ; ioshifter[5]                     ; ioshifter[4]                  ; CLK          ; CLK         ; 1.000        ; -0.036     ; 1.074      ;
+; -0.118 ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; ioshifter[0]                  ; CLK          ; CLK         ; 1.000        ; -0.036     ; 1.069      ;
+; -0.118 ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; ioshifter[1]                  ; CLK          ; CLK         ; 1.000        ; -0.036     ; 1.069      ;
+; -0.118 ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; ioshifter[6]                  ; CLK          ; CLK         ; 1.000        ; -0.036     ; 1.069      ;
+; -0.118 ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; ioshifter[7]                  ; CLK          ; CLK         ; 1.000        ; -0.036     ; 1.069      ;
+; -0.118 ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; ioshifter[3]                  ; CLK          ; CLK         ; 1.000        ; -0.036     ; 1.069      ;
+; -0.118 ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; ioshifter[4]                  ; CLK          ; CLK         ; 1.000        ; -0.036     ; 1.069      ;
+; -0.118 ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; ioshifter[5]                  ; CLK          ; CLK         ; 1.000        ; -0.036     ; 1.069      ;
+; -0.118 ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; ioshifter[2]                  ; CLK          ; CLK         ; 1.000        ; -0.036     ; 1.069      ;
+; -0.102 ; ioshifter[3]                     ; ioshifter[2]                  ; CLK          ; CLK         ; 1.000        ; -0.036     ; 1.053      ;
+; -0.079 ; bitcount[1]                      ; bitcount[8]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 1.030      ;
+; -0.076 ; state.LATCH_DATA_FROM_HOST       ; ioshifter[0]                  ; CLK          ; CLK         ; 1.000        ; -0.036     ; 1.027      ;
+; -0.076 ; state.LATCH_DATA_FROM_HOST       ; ioshifter[1]                  ; CLK          ; CLK         ; 1.000        ; -0.036     ; 1.027      ;
+; -0.076 ; state.LATCH_DATA_FROM_HOST       ; ioshifter[6]                  ; CLK          ; CLK         ; 1.000        ; -0.036     ; 1.027      ;
+; -0.076 ; state.LATCH_DATA_FROM_HOST       ; ioshifter[7]                  ; CLK          ; CLK         ; 1.000        ; -0.036     ; 1.027      ;
+; -0.076 ; state.LATCH_DATA_FROM_HOST       ; ioshifter[3]                  ; CLK          ; CLK         ; 1.000        ; -0.036     ; 1.027      ;
+; -0.076 ; state.LATCH_DATA_FROM_HOST       ; ioshifter[4]                  ; CLK          ; CLK         ; 1.000        ; -0.036     ; 1.027      ;
+; -0.076 ; state.LATCH_DATA_FROM_HOST       ; ioshifter[5]                  ; CLK          ; CLK         ; 1.000        ; -0.036     ; 1.027      ;
+; -0.076 ; state.LATCH_DATA_FROM_HOST       ; ioshifter[2]                  ; CLK          ; CLK         ; 1.000        ; -0.036     ; 1.027      ;
+; -0.058 ; state.BITS_SET_PINS_FROM_DATA    ; B_TCK~reg0                    ; CLK          ; CLK         ; 1.000        ; -0.036     ; 1.009      ;
+; -0.038 ; state.BITS_SET_PINS_FROM_DATA    ; state.WAIT_FOR_N_RXF_LOW      ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.989      ;
+; -0.035 ; bitcount[0]                      ; bitcount[8]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.986      ;
+; -0.017 ; bitcount[0]                      ; state.WAIT_FOR_N_RXF_LOW      ; CLK          ; CLK         ; 1.000        ; -0.035     ; 0.969      ;
+; -0.015 ; bitcount[1]                      ; bitcount[7]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.966      ;
+; -0.011 ; bitcount[1]                      ; bitcount[6]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.962      ;
+; -0.011 ; bitcount[3]                      ; bitcount[8]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.962      ;
+; -0.004 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[8]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.955      ;
+; -0.004 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[7]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.955      ;
+; -0.004 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[6]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.955      ;
+; -0.004 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[5]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.955      ;
+; -0.004 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[4]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.955      ;
+; -0.004 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[3]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.955      ;
+; -0.004 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[1]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.955      ;
+; -0.004 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[0]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.955      ;
+; -0.004 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[2]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.955      ;
+; -0.003 ; bitcount[0]                      ; bitcount[7]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.954      ;
+; 0.002  ; bitcount[4]                      ; state.BYTES_GET_TDO_SET_TDI   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.949      ;
+; 0.010  ; bitcount[6]                      ; state.BYTES_GET_TDO_SET_TDI   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.941      ;
+; 0.014  ; ioshifter[5]                     ; bitcount[8]                   ; CLK          ; CLK         ; 1.000        ; -0.039     ; 0.934      ;
+; 0.014  ; bitcount[4]                      ; state.BYTES_SET_BITCOUNT      ; CLK          ; CLK         ; 1.000        ; -0.035     ; 0.938      ;
+; 0.015  ; bitcount[4]                      ; state.BITS_SET_PINS_FROM_DATA ; CLK          ; CLK         ; 1.000        ; -0.035     ; 0.937      ;
+; 0.021  ; bitcount[6]                      ; state.BYTES_SET_BITCOUNT      ; CLK          ; CLK         ; 1.000        ; -0.035     ; 0.931      ;
+; 0.022  ; bitcount[6]                      ; state.BITS_SET_PINS_FROM_DATA ; CLK          ; CLK         ; 1.000        ; -0.035     ; 0.930      ;
+; 0.032  ; bitcount[2]                      ; bitcount[8]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.919      ;
+; 0.033  ; bitcount[0]                      ; bitcount[6]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.918      ;
+; 0.034  ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[0]                  ; CLK          ; CLK         ; 1.000        ; -0.034     ; 0.919      ;
+; 0.034  ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[1]                  ; CLK          ; CLK         ; 1.000        ; -0.034     ; 0.919      ;
+; 0.034  ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[6]                  ; CLK          ; CLK         ; 1.000        ; -0.034     ; 0.919      ;
+; 0.034  ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[7]                  ; CLK          ; CLK         ; 1.000        ; -0.034     ; 0.919      ;
+; 0.034  ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[3]                  ; CLK          ; CLK         ; 1.000        ; -0.034     ; 0.919      ;
+; 0.034  ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[4]                  ; CLK          ; CLK         ; 1.000        ; -0.034     ; 0.919      ;
+; 0.034  ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[5]                  ; CLK          ; CLK         ; 1.000        ; -0.034     ; 0.919      ;
+; 0.034  ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[2]                  ; CLK          ; CLK         ; 1.000        ; -0.034     ; 0.919      ;
+; 0.046  ; bitcount[2]                      ; state.WAIT_FOR_N_RXF_LOW      ; CLK          ; CLK         ; 1.000        ; -0.035     ; 0.906      ;
+; 0.052  ; bitcount[5]                      ; bitcount[8]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.899      ;
+; 0.053  ; bitcount[1]                      ; bitcount[5]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.898      ;
+; 0.053  ; bitcount[3]                      ; bitcount[7]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.898      ;
+; 0.057  ; bitcount[1]                      ; bitcount[4]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.894      ;
+; 0.057  ; bitcount[3]                      ; bitcount[6]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.894      ;
+; 0.061  ; ioshifter[6]                     ; state.WAIT_FOR_N_TXE_LOW      ; CLK          ; CLK         ; 1.000        ; -0.038     ; 0.888      ;
+; 0.064  ; bitcount[2]                      ; bitcount[7]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.887      ;
+; 0.065  ; bitcount[0]                      ; bitcount[5]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.886      ;
+; 0.081  ; ioshifter[0]                     ; B_TDI~reg0                    ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.870      ;
+; 0.083  ; state.BYTES_SET_BITCOUNT         ; bitcount[8]                   ; CLK          ; CLK         ; 1.000        ; -0.037     ; 0.867      ;
+; 0.083  ; state.BYTES_SET_BITCOUNT         ; bitcount[7]                   ; CLK          ; CLK         ; 1.000        ; -0.037     ; 0.867      ;
+; 0.083  ; state.BYTES_SET_BITCOUNT         ; bitcount[6]                   ; CLK          ; CLK         ; 1.000        ; -0.037     ; 0.867      ;
+; 0.083  ; state.BYTES_SET_BITCOUNT         ; bitcount[5]                   ; CLK          ; CLK         ; 1.000        ; -0.037     ; 0.867      ;
+; 0.083  ; state.BYTES_SET_BITCOUNT         ; bitcount[4]                   ; CLK          ; CLK         ; 1.000        ; -0.037     ; 0.867      ;
+; 0.083  ; state.BYTES_SET_BITCOUNT         ; bitcount[3]                   ; CLK          ; CLK         ; 1.000        ; -0.037     ; 0.867      ;
+; 0.083  ; state.BYTES_SET_BITCOUNT         ; bitcount[1]                   ; CLK          ; CLK         ; 1.000        ; -0.037     ; 0.867      ;
+; 0.083  ; state.BYTES_SET_BITCOUNT         ; bitcount[0]                   ; CLK          ; CLK         ; 1.000        ; -0.037     ; 0.867      ;
+; 0.083  ; state.BYTES_SET_BITCOUNT         ; bitcount[2]                   ; CLK          ; CLK         ; 1.000        ; -0.037     ; 0.867      ;
+; 0.084  ; bitcount[0]                      ; state.BYTES_GET_TDO_SET_TDI   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.867      ;
+; 0.088  ; ioshifter[0]                     ; B_TCK~reg0                    ; CLK          ; CLK         ; 1.000        ; -0.038     ; 0.861      ;
+; 0.097  ; bitcount[8]                      ; state.BYTES_SET_BITCOUNT      ; CLK          ; CLK         ; 1.000        ; -0.035     ; 0.855      ;
+; 0.098  ; bitcount[8]                      ; state.BITS_SET_PINS_FROM_DATA ; CLK          ; CLK         ; 1.000        ; -0.035     ; 0.854      ;
+; 0.100  ; bitcount[2]                      ; bitcount[6]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.851      ;
+; 0.101  ; state.BITS_SET_PINS_FROM_DATA    ; B_NCE~reg0                    ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.850      ;
+; 0.101  ; state.BITS_SET_PINS_FROM_DATA    ; B_NCS~reg0                    ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.850      ;
+; 0.101  ; bitcount[4]                      ; bitcount[8]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.850      ;
+; 0.101  ; bitcount[0]                      ; bitcount[4]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.850      ;
+; 0.103  ; ioshifter[4]                     ; B_TDI~reg0                    ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.848      ;
+; 0.106  ; bitcount[5]                      ; state.BYTES_GET_TDO_SET_TDI   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.845      ;
+; 0.108  ; bitcount[5]                      ; state.BYTES_SET_BITCOUNT      ; CLK          ; CLK         ; 1.000        ; -0.035     ; 0.844      ;
+; 0.109  ; bitcount[5]                      ; state.BITS_SET_PINS_FROM_DATA ; CLK          ; CLK         ; 1.000        ; -0.035     ; 0.843      ;
+; 0.114  ; state.BITS_SET_PINS_FROM_DATA    ; B_TDI~reg0                    ; CLK          ; CLK         ; 1.000        ; -0.034     ; 0.839      ;
+; 0.115  ; bitcount[7]                      ; bitcount[8]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.836      ;
+; 0.116  ; bitcount[5]                      ; bitcount[7]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.835      ;
+; 0.118  ; bitcount[1]                      ; state.WAIT_FOR_N_RXF_LOW      ; CLK          ; CLK         ; 1.000        ; -0.035     ; 0.834      ;
+; 0.120  ; bitcount[5]                      ; bitcount[6]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.831      ;
+; 0.121  ; bitcount[1]                      ; bitcount[3]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.830      ;
+; 0.121  ; bitcount[3]                      ; bitcount[5]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.830      ;
+; 0.125  ; bitcount[1]                      ; bitcount[2]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.826      ;
+; 0.125  ; bitcount[3]                      ; bitcount[4]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.826      ;
+; 0.132  ; bitcount[4]                      ; bitcount[7]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.819      ;
+; 0.132  ; bitcount[2]                      ; bitcount[5]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.819      ;
+; 0.133  ; bitcount[0]                      ; bitcount[3]                   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.818      ;
+; 0.137  ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; B_TCK~reg0                    ; CLK          ; CLK         ; 1.000        ; -0.038     ; 0.812      ;
+; 0.147  ; bitcount[2]                      ; state.BYTES_GET_TDO_SET_TDI   ; CLK          ; CLK         ; 1.000        ; -0.036     ; 0.804      ;
++--------+----------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'CLK'                                                                                                               ;
++-------+----------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                        ; To Node                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.187 ; do_output                        ; do_output                     ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.307      ;
+; 0.187 ; carry_in                         ; carry_in                      ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.307      ;
+; 0.197 ; state.SET_WR_LOW                 ; state.OUTPUT_DISABLE          ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.317      ;
+; 0.199 ; state.KEEP_N_RD_LOW              ; state.LATCH_DATA_FROM_HOST    ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.319      ;
+; 0.199 ; state.WAIT_FOR_N_TXE_LOW         ; state.SET_WR_HIGH             ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.319      ;
+; 0.203 ; state.WAIT_FOR_N_RXF_LOW         ; state.SET_N_RD_LOW            ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.323      ;
+; 0.205 ; state.BYTES_SET_BITCOUNT         ; do_output                     ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.325      ;
+; 0.209 ; bitcount[8]                      ; bitcount[8]                   ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.329      ;
+; 0.258 ; state.BYTES_KEEP_CLOCK_HIGH      ; B_TCK~reg0                    ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.378      ;
+; 0.258 ; do_output                        ; state.WAIT_FOR_N_TXE_LOW      ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.378      ;
+; 0.259 ; state.OUTPUT_ENABLE              ; state.SET_WR_LOW              ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.379      ;
+; 0.264 ; state.SET_N_RD_LOW               ; state.KEEP_N_RD_LOW           ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.386      ;
+; 0.271 ; state.BYTES_KEEP_CLOCK_HIGH      ; state.BYTES_CLOCK_FINISH      ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.391      ;
+; 0.280 ; ioshifter[0]                     ; D[0]~reg0                     ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.400      ;
+; 0.281 ; ioshifter[2]                     ; B_NCE~reg0                    ; CLK          ; CLK         ; 0.000        ; 0.034      ; 0.399      ;
+; 0.281 ; ioshifter[5]                     ; D[5]~reg0                     ; CLK          ; CLK         ; 0.000        ; 0.037      ; 0.402      ;
+; 0.282 ; ioshifter[5]                     ; B_OE~reg0                     ; CLK          ; CLK         ; 0.000        ; 0.037      ; 0.403      ;
+; 0.298 ; bitcount[1]                      ; bitcount[1]                   ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.418      ;
+; 0.298 ; state.OUTPUT_ENABLE              ; WR~reg0                       ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.418      ;
+; 0.299 ; bitcount[4]                      ; bitcount[4]                   ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.419      ;
+; 0.299 ; bitcount[3]                      ; bitcount[3]                   ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.419      ;
+; 0.300 ; bitcount[6]                      ; bitcount[6]                   ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.420      ;
+; 0.300 ; bitcount[2]                      ; bitcount[2]                   ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.420      ;
+; 0.301 ; bitcount[5]                      ; bitcount[5]                   ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.421      ;
+; 0.308 ; bitcount[7]                      ; bitcount[7]                   ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.428      ;
+; 0.310 ; bitcount[0]                      ; bitcount[0]                   ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.430      ;
+; 0.312 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[5]                  ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.434      ;
+; 0.312 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[2]                  ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.434      ;
+; 0.313 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[6]                  ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.435      ;
+; 0.314 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[4]                  ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.436      ;
+; 0.315 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[7]                  ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.437      ;
+; 0.315 ; state.BITS_SET_PINS_FROM_DATA    ; ioshifter[3]                  ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.437      ;
+; 0.325 ; ioshifter[6]                     ; ioshifter[5]                  ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.445      ;
+; 0.333 ; ioshifter[1]                     ; ioshifter[0]                  ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.453      ;
+; 0.337 ; ioshifter[1]                     ; D[1]~reg0                     ; CLK          ; CLK         ; 0.000        ; 0.037      ; 0.458      ;
+; 0.339 ; B_NCS~reg0                       ; carry_in                      ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.459      ;
+; 0.340 ; ioshifter[1]                     ; B_TMS~reg0                    ; CLK          ; CLK         ; 0.000        ; 0.037      ; 0.461      ;
+; 0.340 ; state.SET_WR_HIGH                ; WR~reg0                       ; CLK          ; CLK         ; 0.000        ; 0.037      ; 0.461      ;
+; 0.344 ; state.SET_N_RD_HIGH              ; state.BITS_SET_PINS_FROM_DATA ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.464      ;
+; 0.345 ; state.SET_N_RD_HIGH              ; state.BYTES_SET_BITCOUNT      ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.465      ;
+; 0.345 ; ioshifter[7]                     ; state.BITS_SET_PINS_FROM_DATA ; CLK          ; CLK         ; 0.000        ; 0.034      ; 0.463      ;
+; 0.345 ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; ioshifter[1]                  ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.465      ;
+; 0.346 ; state.BYTES_CLOCK_FINISH         ; state.WAIT_FOR_N_RXF_LOW      ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.466      ;
+; 0.346 ; ioshifter[7]                     ; state.BYTES_SET_BITCOUNT      ; CLK          ; CLK         ; 0.000        ; 0.034      ; 0.464      ;
+; 0.353 ; ioshifter[6]                     ; D[6]~reg0                     ; CLK          ; CLK         ; 0.000        ; 0.034      ; 0.471      ;
+; 0.355 ; state.SET_WR_HIGH                ; state.OUTPUT_ENABLE           ; CLK          ; CLK         ; 0.000        ; 0.037      ; 0.476      ;
+; 0.367 ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; state.BYTES_KEEP_CLOCK_HIGH   ; CLK          ; CLK         ; 0.000        ; 0.034      ; 0.485      ;
+; 0.374 ; carry_in                         ; ioshifter[7]                  ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.496      ;
+; 0.379 ; ioshifter[6]                     ; do_output                     ; CLK          ; CLK         ; 0.000        ; 0.034      ; 0.497      ;
+; 0.396 ; state.BYTES_CLOCK_FINISH         ; state.WAIT_FOR_N_TXE_LOW      ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.516      ;
+; 0.397 ; state.BYTES_CLOCK_FINISH         ; B_TCK~reg0                    ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.517      ;
+; 0.400 ; state.BYTES_CLOCK_FINISH         ; state.BYTES_GET_TDO_SET_TDI   ; CLK          ; CLK         ; 0.000        ; 0.035      ; 0.519      ;
+; 0.404 ; state.OUTPUT_DISABLE             ; state.WAIT_FOR_N_RXF_LOW      ; CLK          ; CLK         ; 0.000        ; 0.035      ; 0.523      ;
+; 0.418 ; state.SET_N_RD_HIGH              ; state.BYTES_GET_TDO_SET_TDI   ; CLK          ; CLK         ; 0.000        ; 0.035      ; 0.537      ;
+; 0.424 ; state.WAIT_FOR_N_RXF_LOW         ; state.WAIT_FOR_N_RXF_LOW      ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.544      ;
+; 0.427 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[8]                   ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.547      ;
+; 0.427 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[7]                   ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.547      ;
+; 0.427 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[6]                   ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.547      ;
+; 0.427 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[5]                   ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.547      ;
+; 0.427 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[4]                   ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.547      ;
+; 0.427 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[3]                   ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.547      ;
+; 0.427 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[1]                   ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.547      ;
+; 0.427 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[0]                   ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.547      ;
+; 0.427 ; state.BYTES_GET_TDO_SET_TDI      ; bitcount[2]                   ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.547      ;
+; 0.433 ; ioshifter[2]                     ; ioshifter[1]                  ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.553      ;
+; 0.434 ; state.BYTES_GET_TDO_SET_TDI      ; carry_in                      ; CLK          ; CLK         ; 0.000        ; 0.037      ; 0.555      ;
+; 0.435 ; state.OUTPUT_ENABLE              ; D[5]~en                       ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.555      ;
+; 0.435 ; state.BYTES_CLOCK_HIGH_AND_SHIFT ; ioshifter[0]                  ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.555      ;
+; 0.436 ; state.OUTPUT_ENABLE              ; D[0]~en                       ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.556      ;
+; 0.437 ; state.OUTPUT_ENABLE              ; D[3]~en                       ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.557      ;
+; 0.437 ; state.OUTPUT_ENABLE              ; D[6]~en                       ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.557      ;
+; 0.437 ; ioshifter[7]                     ; ioshifter[6]                  ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.557      ;
+; 0.438 ; state.OUTPUT_ENABLE              ; D[4]~en                       ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.558      ;
+; 0.438 ; state.OUTPUT_ENABLE              ; D[7]~en                       ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.558      ;
+; 0.438 ; ioshifter[3]                     ; D[3]~reg0                     ; CLK          ; CLK         ; 0.000        ; 0.033      ; 0.555      ;
+; 0.439 ; state.OUTPUT_ENABLE              ; D[1]~en                       ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.559      ;
+; 0.440 ; state.OUTPUT_ENABLE              ; D[2]~en                       ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.560      ;
+; 0.442 ; bitcount[1]                      ; state.WAIT_FOR_N_TXE_LOW      ; CLK          ; CLK         ; 0.000        ; 0.037      ; 0.563      ;
+; 0.445 ; ioshifter[2]                     ; D[2]~reg0                     ; CLK          ; CLK         ; 0.000        ; 0.033      ; 0.562      ;
+; 0.446 ; ioshifter[4]                     ; bitcount[7]                   ; CLK          ; CLK         ; 0.000        ; 0.033      ; 0.563      ;
+; 0.446 ; bitcount[1]                      ; bitcount[2]                   ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.566      ;
+; 0.447 ; bitcount[3]                      ; bitcount[4]                   ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.567      ;
+; 0.447 ; state.SET_WR_LOW                 ; D[5]~en                       ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.567      ;
+; 0.448 ; state.SET_WR_LOW                 ; D[0]~en                       ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.568      ;
+; 0.449 ; bitcount[5]                      ; bitcount[6]                   ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.569      ;
+; 0.449 ; state.SET_WR_LOW                 ; D[3]~en                       ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.569      ;
+; 0.449 ; state.SET_WR_LOW                 ; D[6]~en                       ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.569      ;
+; 0.450 ; state.LATCH_DATA_FROM_HOST       ; state.SET_N_RD_HIGH           ; CLK          ; CLK         ; 0.000        ; 0.034      ; 0.568      ;
+; 0.450 ; state.SET_WR_LOW                 ; D[4]~en                       ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.570      ;
+; 0.450 ; state.SET_WR_LOW                 ; D[7]~en                       ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.570      ;
+; 0.451 ; state.SET_WR_LOW                 ; D[1]~en                       ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.571      ;
+; 0.452 ; ioshifter[7]                     ; D[7]~reg0                     ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.572      ;
+; 0.452 ; state.WAIT_FOR_N_TXE_LOW         ; state.WAIT_FOR_N_TXE_LOW      ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.572      ;
+; 0.452 ; state.SET_WR_LOW                 ; D[2]~en                       ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.572      ;
+; 0.453 ; ioshifter[3]                     ; B_NCS~reg0                    ; CLK          ; CLK         ; 0.000        ; 0.034      ; 0.571      ;
+; 0.454 ; ioshifter[3]                     ; bitcount[6]                   ; CLK          ; CLK         ; 0.000        ; 0.033      ; 0.571      ;
+; 0.455 ; ioshifter[1]                     ; bitcount[4]                   ; CLK          ; CLK         ; 0.000        ; 0.033      ; 0.572      ;
+; 0.456 ; bitcount[7]                      ; bitcount[8]                   ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.576      ;
+; 0.457 ; bitcount[0]                      ; bitcount[1]                   ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.577      ;
+; 0.458 ; bitcount[4]                      ; bitcount[5]                   ; CLK          ; CLK         ; 0.000        ; 0.036      ; 0.578      ;
++-------+----------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+
+
+----------------------------------------------
+; Fast 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -1.576  ; 0.187 ; N/A      ; N/A     ; -3.000              ;
+;  CLK             ; -1.576  ; 0.187 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -51.678 ; 0.0   ; 0.0      ; 0.0     ; -90.733             ;
+;  CLK             ; -51.678 ; 0.000 ; N/A      ; N/A     ; -90.733             ;
++------------------+---------+-------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; B_TCK         ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; B_TMS         ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; B_NCE         ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; B_NCS         ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; B_TDI         ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; B_OE          ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; nRD           ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; WR            ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; D[0]          ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; D[1]          ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; D[2]          ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; D[3]          ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; D[4]          ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; D[5]          ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; D[6]          ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; D[7]          ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~ ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_nCEO~ ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; D[0]                    ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; D[1]                    ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; D[2]                    ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; D[3]                    ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; D[4]                    ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; D[5]                    ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; D[6]                    ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; D[7]                    ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; CLK                     ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; nRST                    ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; B_TDO                   ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; B_ASDO                  ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; nRXF                    ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; nTXE                    ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; ~ALTERA_DATA0~          ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; B_TCK         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 8.89e-09 V                   ; 3.12 V              ; -0.11 V             ; 0.153 V                              ; 0.272 V                              ; 6.41e-10 s                  ; 4.57e-10 s                  ; No                         ; Yes                        ; 3.08 V                      ; 8.89e-09 V                  ; 3.12 V             ; -0.11 V            ; 0.153 V                             ; 0.272 V                             ; 6.41e-10 s                 ; 4.57e-10 s                 ; No                        ; Yes                       ;
+; B_TMS         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 6.38e-09 V                   ; 3.13 V              ; -0.117 V            ; 0.15 V                               ; 0.263 V                              ; 6.31e-10 s                  ; 4.46e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 6.38e-09 V                  ; 3.13 V             ; -0.117 V           ; 0.15 V                              ; 0.263 V                             ; 6.31e-10 s                 ; 4.46e-10 s                 ; No                        ; No                        ;
+; B_NCE         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 8.89e-09 V                   ; 3.12 V              ; -0.11 V             ; 0.153 V                              ; 0.272 V                              ; 6.41e-10 s                  ; 4.57e-10 s                  ; No                         ; Yes                        ; 3.08 V                      ; 8.89e-09 V                  ; 3.12 V             ; -0.11 V            ; 0.153 V                             ; 0.272 V                             ; 6.41e-10 s                 ; 4.57e-10 s                 ; No                        ; Yes                       ;
+; B_NCS         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 8.89e-09 V                   ; 3.12 V              ; -0.11 V             ; 0.153 V                              ; 0.272 V                              ; 6.41e-10 s                  ; 4.57e-10 s                  ; No                         ; Yes                        ; 3.08 V                      ; 8.89e-09 V                  ; 3.12 V             ; -0.11 V            ; 0.153 V                             ; 0.272 V                             ; 6.41e-10 s                 ; 4.57e-10 s                 ; No                        ; Yes                       ;
+; B_TDI         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 8.89e-09 V                   ; 3.12 V              ; -0.11 V             ; 0.153 V                              ; 0.272 V                              ; 6.41e-10 s                  ; 4.57e-10 s                  ; No                         ; Yes                        ; 3.08 V                      ; 8.89e-09 V                  ; 3.12 V             ; -0.11 V            ; 0.153 V                             ; 0.272 V                             ; 6.41e-10 s                 ; 4.57e-10 s                 ; No                        ; Yes                       ;
+; B_OE          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 8.89e-09 V                   ; 3.12 V              ; -0.11 V             ; 0.153 V                              ; 0.272 V                              ; 6.41e-10 s                  ; 4.57e-10 s                  ; No                         ; Yes                        ; 3.08 V                      ; 8.89e-09 V                  ; 3.12 V             ; -0.11 V            ; 0.153 V                             ; 0.272 V                             ; 6.41e-10 s                 ; 4.57e-10 s                 ; No                        ; Yes                       ;
+; nRD           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 8.89e-09 V                   ; 3.12 V              ; -0.11 V             ; 0.153 V                              ; 0.272 V                              ; 6.41e-10 s                  ; 4.57e-10 s                  ; No                         ; Yes                        ; 3.08 V                      ; 8.89e-09 V                  ; 3.12 V             ; -0.11 V            ; 0.153 V                             ; 0.272 V                             ; 6.41e-10 s                 ; 4.57e-10 s                 ; No                        ; Yes                       ;
+; WR            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 8.89e-09 V                   ; 3.12 V              ; -0.11 V             ; 0.153 V                              ; 0.272 V                              ; 6.41e-10 s                  ; 4.57e-10 s                  ; No                         ; Yes                        ; 3.08 V                      ; 8.89e-09 V                  ; 3.12 V             ; -0.11 V            ; 0.153 V                             ; 0.272 V                             ; 6.41e-10 s                 ; 4.57e-10 s                 ; No                        ; Yes                       ;
+; D[0]          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 8.89e-09 V                   ; 3.12 V              ; -0.11 V             ; 0.153 V                              ; 0.272 V                              ; 6.41e-10 s                  ; 4.57e-10 s                  ; No                         ; Yes                        ; 3.08 V                      ; 8.89e-09 V                  ; 3.12 V             ; -0.11 V            ; 0.153 V                             ; 0.272 V                             ; 6.41e-10 s                 ; 4.57e-10 s                 ; No                        ; Yes                       ;
+; D[1]          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 8.89e-09 V                   ; 3.12 V              ; -0.11 V             ; 0.153 V                              ; 0.272 V                              ; 6.41e-10 s                  ; 4.57e-10 s                  ; No                         ; Yes                        ; 3.08 V                      ; 8.89e-09 V                  ; 3.12 V             ; -0.11 V            ; 0.153 V                             ; 0.272 V                             ; 6.41e-10 s                 ; 4.57e-10 s                 ; No                        ; Yes                       ;
+; D[2]          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 8.89e-09 V                   ; 3.12 V              ; -0.11 V             ; 0.153 V                              ; 0.272 V                              ; 6.41e-10 s                  ; 4.57e-10 s                  ; No                         ; Yes                        ; 3.08 V                      ; 8.89e-09 V                  ; 3.12 V             ; -0.11 V            ; 0.153 V                             ; 0.272 V                             ; 6.41e-10 s                 ; 4.57e-10 s                 ; No                        ; Yes                       ;
+; D[3]          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 8.89e-09 V                   ; 3.12 V              ; -0.11 V             ; 0.153 V                              ; 0.272 V                              ; 6.41e-10 s                  ; 4.57e-10 s                  ; No                         ; Yes                        ; 3.08 V                      ; 8.89e-09 V                  ; 3.12 V             ; -0.11 V            ; 0.153 V                             ; 0.272 V                             ; 6.41e-10 s                 ; 4.57e-10 s                 ; No                        ; Yes                       ;
+; D[4]          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 8.89e-09 V                   ; 3.12 V              ; -0.11 V             ; 0.153 V                              ; 0.272 V                              ; 6.41e-10 s                  ; 4.57e-10 s                  ; No                         ; Yes                        ; 3.08 V                      ; 8.89e-09 V                  ; 3.12 V             ; -0.11 V            ; 0.153 V                             ; 0.272 V                             ; 6.41e-10 s                 ; 4.57e-10 s                 ; No                        ; Yes                       ;
+; D[5]          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 8.89e-09 V                   ; 3.09 V              ; -0.011 V            ; 0.196 V                              ; 0.301 V                              ; 4.93e-09 s                  ; 3.56e-09 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 8.89e-09 V                  ; 3.09 V             ; -0.011 V           ; 0.196 V                             ; 0.301 V                             ; 4.93e-09 s                 ; 3.56e-09 s                 ; Yes                       ; Yes                       ;
+; D[6]          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 8.89e-09 V                   ; 3.12 V              ; -0.11 V             ; 0.153 V                              ; 0.272 V                              ; 6.41e-10 s                  ; 4.57e-10 s                  ; No                         ; Yes                        ; 3.08 V                      ; 8.89e-09 V                  ; 3.12 V             ; -0.11 V            ; 0.153 V                             ; 0.272 V                             ; 6.41e-10 s                 ; 4.57e-10 s                 ; No                        ; Yes                       ;
+; D[7]          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 8.89e-09 V                   ; 3.12 V              ; -0.11 V             ; 0.153 V                              ; 0.272 V                              ; 6.41e-10 s                  ; 4.57e-10 s                  ; No                         ; Yes                        ; 3.08 V                      ; 8.89e-09 V                  ; 3.12 V             ; -0.11 V            ; 0.153 V                             ; 0.272 V                             ; 6.41e-10 s                 ; 4.57e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_DCLK~ ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.51e-09 V                   ; 3.18 V              ; -0.157 V            ; 0.147 V                              ; 0.259 V                              ; 2.81e-10 s                  ; 2.53e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.51e-09 V                  ; 3.18 V             ; -0.157 V           ; 0.147 V                             ; 0.259 V                             ; 2.81e-10 s                 ; 2.53e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 6.38e-09 V                   ; 3.12 V              ; -0.0818 V           ; 0.205 V                              ; 0.244 V                              ; 8.86e-10 s                  ; 6.56e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 6.38e-09 V                  ; 3.12 V             ; -0.0818 V          ; 0.205 V                             ; 0.244 V                             ; 8.86e-10 s                 ; 6.56e-10 s                 ; No                        ; No                        ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; B_TCK         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 7.5e-07 V                    ; 3.11 V              ; -0.0503 V           ; 0.122 V                              ; 0.172 V                              ; 7.08e-10 s                  ; 6.43e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 7.5e-07 V                   ; 3.11 V             ; -0.0503 V          ; 0.122 V                             ; 0.172 V                             ; 7.08e-10 s                 ; 6.43e-10 s                 ; Yes                       ; Yes                       ;
+; B_TMS         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 5.04e-07 V                   ; 3.11 V              ; -0.0624 V           ; 0.233 V                              ; 0.172 V                              ; 6.86e-10 s                  ; 6.33e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 5.04e-07 V                  ; 3.11 V             ; -0.0624 V          ; 0.233 V                             ; 0.172 V                             ; 6.86e-10 s                 ; 6.33e-10 s                 ; Yes                       ; No                        ;
+; B_NCE         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 7.5e-07 V                    ; 3.11 V              ; -0.0503 V           ; 0.122 V                              ; 0.172 V                              ; 7.08e-10 s                  ; 6.43e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 7.5e-07 V                   ; 3.11 V             ; -0.0503 V          ; 0.122 V                             ; 0.172 V                             ; 7.08e-10 s                 ; 6.43e-10 s                 ; Yes                       ; Yes                       ;
+; B_NCS         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 7.5e-07 V                    ; 3.11 V              ; -0.0503 V           ; 0.122 V                              ; 0.172 V                              ; 7.08e-10 s                  ; 6.43e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 7.5e-07 V                   ; 3.11 V             ; -0.0503 V          ; 0.122 V                             ; 0.172 V                             ; 7.08e-10 s                 ; 6.43e-10 s                 ; Yes                       ; Yes                       ;
+; B_TDI         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 7.5e-07 V                    ; 3.11 V              ; -0.0503 V           ; 0.122 V                              ; 0.172 V                              ; 7.08e-10 s                  ; 6.43e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 7.5e-07 V                   ; 3.11 V             ; -0.0503 V          ; 0.122 V                             ; 0.172 V                             ; 7.08e-10 s                 ; 6.43e-10 s                 ; Yes                       ; Yes                       ;
+; B_OE          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 7.5e-07 V                    ; 3.11 V              ; -0.0503 V           ; 0.122 V                              ; 0.172 V                              ; 7.08e-10 s                  ; 6.43e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 7.5e-07 V                   ; 3.11 V             ; -0.0503 V          ; 0.122 V                             ; 0.172 V                             ; 7.08e-10 s                 ; 6.43e-10 s                 ; Yes                       ; Yes                       ;
+; nRD           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 7.5e-07 V                    ; 3.11 V              ; -0.0503 V           ; 0.122 V                              ; 0.172 V                              ; 7.08e-10 s                  ; 6.43e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 7.5e-07 V                   ; 3.11 V             ; -0.0503 V          ; 0.122 V                             ; 0.172 V                             ; 7.08e-10 s                 ; 6.43e-10 s                 ; Yes                       ; Yes                       ;
+; WR            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 7.5e-07 V                    ; 3.11 V              ; -0.0503 V           ; 0.122 V                              ; 0.172 V                              ; 7.08e-10 s                  ; 6.43e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 7.5e-07 V                   ; 3.11 V             ; -0.0503 V          ; 0.122 V                             ; 0.172 V                             ; 7.08e-10 s                 ; 6.43e-10 s                 ; Yes                       ; Yes                       ;
+; D[0]          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 7.5e-07 V                    ; 3.11 V              ; -0.0503 V           ; 0.122 V                              ; 0.172 V                              ; 7.08e-10 s                  ; 6.43e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 7.5e-07 V                   ; 3.11 V             ; -0.0503 V          ; 0.122 V                             ; 0.172 V                             ; 7.08e-10 s                 ; 6.43e-10 s                 ; Yes                       ; Yes                       ;
+; D[1]          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 7.5e-07 V                    ; 3.11 V              ; -0.0503 V           ; 0.122 V                              ; 0.172 V                              ; 7.08e-10 s                  ; 6.43e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 7.5e-07 V                   ; 3.11 V             ; -0.0503 V          ; 0.122 V                             ; 0.172 V                             ; 7.08e-10 s                 ; 6.43e-10 s                 ; Yes                       ; Yes                       ;
+; D[2]          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 7.5e-07 V                    ; 3.11 V              ; -0.0503 V           ; 0.122 V                              ; 0.172 V                              ; 7.08e-10 s                  ; 6.43e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 7.5e-07 V                   ; 3.11 V             ; -0.0503 V          ; 0.122 V                             ; 0.172 V                             ; 7.08e-10 s                 ; 6.43e-10 s                 ; Yes                       ; Yes                       ;
+; D[3]          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 7.5e-07 V                    ; 3.11 V              ; -0.0503 V           ; 0.122 V                              ; 0.172 V                              ; 7.08e-10 s                  ; 6.43e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 7.5e-07 V                   ; 3.11 V             ; -0.0503 V          ; 0.122 V                             ; 0.172 V                             ; 7.08e-10 s                 ; 6.43e-10 s                 ; Yes                       ; Yes                       ;
+; D[4]          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 7.5e-07 V                    ; 3.11 V              ; -0.0503 V           ; 0.122 V                              ; 0.172 V                              ; 7.08e-10 s                  ; 6.43e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 7.5e-07 V                   ; 3.11 V             ; -0.0503 V          ; 0.122 V                             ; 0.172 V                             ; 7.08e-10 s                 ; 6.43e-10 s                 ; Yes                       ; Yes                       ;
+; D[5]          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 7.5e-07 V                    ; 3.08 V              ; -0.00457 V          ; 0.185 V                              ; 0.21 V                               ; 5.8e-09 s                   ; 4.46e-09 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 7.5e-07 V                   ; 3.08 V             ; -0.00457 V         ; 0.185 V                             ; 0.21 V                              ; 5.8e-09 s                  ; 4.46e-09 s                 ; Yes                       ; Yes                       ;
+; D[6]          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 7.5e-07 V                    ; 3.11 V              ; -0.0503 V           ; 0.122 V                              ; 0.172 V                              ; 7.08e-10 s                  ; 6.43e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 7.5e-07 V                   ; 3.11 V             ; -0.0503 V          ; 0.122 V                             ; 0.172 V                             ; 7.08e-10 s                 ; 6.43e-10 s                 ; Yes                       ; Yes                       ;
+; D[7]          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 7.5e-07 V                    ; 3.11 V              ; -0.0503 V           ; 0.122 V                              ; 0.172 V                              ; 7.08e-10 s                  ; 6.43e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 7.5e-07 V                   ; 3.11 V             ; -0.0503 V          ; 0.122 V                             ; 0.172 V                             ; 7.08e-10 s                 ; 6.43e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.6e-07 V                    ; 3.13 V              ; -0.103 V            ; 0.164 V                              ; 0.134 V                              ; 3.14e-10 s                  ; 4.05e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 2.6e-07 V                   ; 3.13 V             ; -0.103 V           ; 0.164 V                             ; 0.134 V                             ; 3.14e-10 s                 ; 4.05e-10 s                 ; Yes                       ; No                        ;
+; ~ALTERA_nCEO~ ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 5.04e-07 V                   ; 3.11 V              ; -0.0469 V           ; 0.191 V                              ; 0.215 V                              ; 1.08e-09 s                  ; 8.62e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 5.04e-07 V                  ; 3.11 V             ; -0.0469 V          ; 0.191 V                             ; 0.215 V                             ; 1.08e-09 s                 ; 8.62e-10 s                 ; Yes                       ; No                        ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; B_TCK         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.85e-07 V                   ; 3.57 V              ; -0.141 V            ; 0.301 V                              ; 0.239 V                              ; 4.61e-10 s                  ; 4.2e-10 s                   ; No                         ; No                         ; 3.46 V                      ; 1.85e-07 V                  ; 3.57 V             ; -0.141 V           ; 0.301 V                             ; 0.239 V                             ; 4.61e-10 s                 ; 4.2e-10 s                  ; No                        ; No                        ;
+; B_TMS         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.25e-07 V                   ; 3.6 V               ; -0.127 V            ; 0.302 V                              ; 0.21 V                               ; 4.55e-10 s                  ; 4.11e-10 s                  ; No                         ; No                         ; 3.46 V                      ; 1.25e-07 V                  ; 3.6 V              ; -0.127 V           ; 0.302 V                             ; 0.21 V                              ; 4.55e-10 s                 ; 4.11e-10 s                 ; No                        ; No                        ;
+; B_NCE         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.85e-07 V                   ; 3.57 V              ; -0.141 V            ; 0.301 V                              ; 0.239 V                              ; 4.61e-10 s                  ; 4.2e-10 s                   ; No                         ; No                         ; 3.46 V                      ; 1.85e-07 V                  ; 3.57 V             ; -0.141 V           ; 0.301 V                             ; 0.239 V                             ; 4.61e-10 s                 ; 4.2e-10 s                  ; No                        ; No                        ;
+; B_NCS         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.85e-07 V                   ; 3.57 V              ; -0.141 V            ; 0.301 V                              ; 0.239 V                              ; 4.61e-10 s                  ; 4.2e-10 s                   ; No                         ; No                         ; 3.46 V                      ; 1.85e-07 V                  ; 3.57 V             ; -0.141 V           ; 0.301 V                             ; 0.239 V                             ; 4.61e-10 s                 ; 4.2e-10 s                  ; No                        ; No                        ;
+; B_TDI         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.85e-07 V                   ; 3.57 V              ; -0.141 V            ; 0.301 V                              ; 0.239 V                              ; 4.61e-10 s                  ; 4.2e-10 s                   ; No                         ; No                         ; 3.46 V                      ; 1.85e-07 V                  ; 3.57 V             ; -0.141 V           ; 0.301 V                             ; 0.239 V                             ; 4.61e-10 s                 ; 4.2e-10 s                  ; No                        ; No                        ;
+; B_OE          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.85e-07 V                   ; 3.57 V              ; -0.141 V            ; 0.301 V                              ; 0.239 V                              ; 4.61e-10 s                  ; 4.2e-10 s                   ; No                         ; No                         ; 3.46 V                      ; 1.85e-07 V                  ; 3.57 V             ; -0.141 V           ; 0.301 V                             ; 0.239 V                             ; 4.61e-10 s                 ; 4.2e-10 s                  ; No                        ; No                        ;
+; nRD           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.85e-07 V                   ; 3.57 V              ; -0.141 V            ; 0.301 V                              ; 0.239 V                              ; 4.61e-10 s                  ; 4.2e-10 s                   ; No                         ; No                         ; 3.46 V                      ; 1.85e-07 V                  ; 3.57 V             ; -0.141 V           ; 0.301 V                             ; 0.239 V                             ; 4.61e-10 s                 ; 4.2e-10 s                  ; No                        ; No                        ;
+; WR            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.85e-07 V                   ; 3.57 V              ; -0.141 V            ; 0.301 V                              ; 0.239 V                              ; 4.61e-10 s                  ; 4.2e-10 s                   ; No                         ; No                         ; 3.46 V                      ; 1.85e-07 V                  ; 3.57 V             ; -0.141 V           ; 0.301 V                             ; 0.239 V                             ; 4.61e-10 s                 ; 4.2e-10 s                  ; No                        ; No                        ;
+; D[0]          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.85e-07 V                   ; 3.57 V              ; -0.141 V            ; 0.301 V                              ; 0.239 V                              ; 4.61e-10 s                  ; 4.2e-10 s                   ; No                         ; No                         ; 3.46 V                      ; 1.85e-07 V                  ; 3.57 V             ; -0.141 V           ; 0.301 V                             ; 0.239 V                             ; 4.61e-10 s                 ; 4.2e-10 s                  ; No                        ; No                        ;
+; D[1]          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.85e-07 V                   ; 3.57 V              ; -0.141 V            ; 0.301 V                              ; 0.239 V                              ; 4.61e-10 s                  ; 4.2e-10 s                   ; No                         ; No                         ; 3.46 V                      ; 1.85e-07 V                  ; 3.57 V             ; -0.141 V           ; 0.301 V                             ; 0.239 V                             ; 4.61e-10 s                 ; 4.2e-10 s                  ; No                        ; No                        ;
+; D[2]          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.85e-07 V                   ; 3.57 V              ; -0.141 V            ; 0.301 V                              ; 0.239 V                              ; 4.61e-10 s                  ; 4.2e-10 s                   ; No                         ; No                         ; 3.46 V                      ; 1.85e-07 V                  ; 3.57 V             ; -0.141 V           ; 0.301 V                             ; 0.239 V                             ; 4.61e-10 s                 ; 4.2e-10 s                  ; No                        ; No                        ;
+; D[3]          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.85e-07 V                   ; 3.57 V              ; -0.141 V            ; 0.301 V                              ; 0.239 V                              ; 4.61e-10 s                  ; 4.2e-10 s                   ; No                         ; No                         ; 3.46 V                      ; 1.85e-07 V                  ; 3.57 V             ; -0.141 V           ; 0.301 V                             ; 0.239 V                             ; 4.61e-10 s                 ; 4.2e-10 s                  ; No                        ; No                        ;
+; D[4]          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.85e-07 V                   ; 3.57 V              ; -0.141 V            ; 0.301 V                              ; 0.239 V                              ; 4.61e-10 s                  ; 4.2e-10 s                   ; No                         ; No                         ; 3.46 V                      ; 1.85e-07 V                  ; 3.57 V             ; -0.141 V           ; 0.301 V                             ; 0.239 V                             ; 4.61e-10 s                 ; 4.2e-10 s                  ; No                        ; No                        ;
+; D[5]          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.85e-07 V                   ; 3.48 V              ; -0.0173 V           ; 0.356 V                              ; 0.324 V                              ; 3.89e-09 s                  ; 3.06e-09 s                  ; No                         ; No                         ; 3.46 V                      ; 1.85e-07 V                  ; 3.48 V             ; -0.0173 V          ; 0.356 V                             ; 0.324 V                             ; 3.89e-09 s                 ; 3.06e-09 s                 ; No                        ; No                        ;
+; D[6]          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.85e-07 V                   ; 3.57 V              ; -0.141 V            ; 0.301 V                              ; 0.239 V                              ; 4.61e-10 s                  ; 4.2e-10 s                   ; No                         ; No                         ; 3.46 V                      ; 1.85e-07 V                  ; 3.57 V             ; -0.141 V           ; 0.301 V                             ; 0.239 V                             ; 4.61e-10 s                 ; 4.2e-10 s                  ; No                        ; No                        ;
+; D[7]          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.85e-07 V                   ; 3.57 V              ; -0.141 V            ; 0.301 V                              ; 0.239 V                              ; 4.61e-10 s                  ; 4.2e-10 s                   ; No                         ; No                         ; 3.46 V                      ; 1.85e-07 V                  ; 3.57 V             ; -0.141 V           ; 0.301 V                             ; 0.239 V                             ; 4.61e-10 s                 ; 4.2e-10 s                  ; No                        ; No                        ;
+; ~ALTERA_DCLK~ ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 6.54e-08 V                   ; 3.66 V              ; -0.26 V             ; 0.41 V                               ; 0.32 V                               ; 1.57e-10 s                  ; 2.15e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 6.54e-08 V                  ; 3.66 V             ; -0.26 V            ; 0.41 V                              ; 0.32 V                              ; 1.57e-10 s                 ; 2.15e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_nCEO~ ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.25e-07 V                   ; 3.57 V              ; -0.0855 V           ; 0.315 V                              ; 0.175 V                              ; 6.79e-10 s                  ; 6.15e-10 s                  ; No                         ; No                         ; 3.46 V                      ; 1.25e-07 V                  ; 3.57 V             ; -0.0855 V          ; 0.315 V                             ; 0.175 V                             ; 6.79e-10 s                 ; 6.15e-10 s                 ; No                        ; No                        ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLK        ; CLK      ; 240      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLK        ; CLK      ; 240      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 13    ; 13   ;
+; Unconstrained Input Port Paths  ; 67    ; 67   ;
+; Unconstrained Output Ports      ; 16    ; 16   ;
+; Unconstrained Output Port Paths ; 24    ; 24   ;
++---------------------------------+-------+------+
+
+
++-------------------------------------+
+; Clock Status Summary                ;
++--------+-------+------+-------------+
+; Target ; Clock ; Type ; Status      ;
++--------+-------+------+-------------+
+; CLK    ; CLK   ; Base ; Constrained ;
++--------+-------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; B_ASDO     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; B_TDO      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; D[0]       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; D[1]       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; D[2]       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; D[3]       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; D[4]       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; D[5]       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; D[6]       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; D[7]       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; nRST       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; nRXF       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; nTXE       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; B_NCE       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; B_NCS       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; B_OE        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; B_TCK       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; B_TDI       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; B_TMS       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; D[0]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; D[1]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; D[2]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; D[3]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; D[4]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; D[5]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; D[6]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; D[7]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WR          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; nRD         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; B_ASDO     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; B_TDO      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; D[0]       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; D[1]       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; D[2]       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; D[3]       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; D[4]       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; D[5]       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; D[6]       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; D[7]       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; nRST       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; nRXF       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; nTXE       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; B_NCE       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; B_NCS       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; B_OE        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; B_TCK       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; B_TDI       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; B_TMS       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; D[0]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; D[1]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; D[2]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; D[3]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; D[4]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; D[5]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; D[6]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; D[7]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WR          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; nRD         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+    Info: Processing started: Mon Jun 07 17:13:02 2021
+Info: Command: quartus_sta cyclone4_slave -c cyclone4_slave
+Info: qsta_default_script.tcl version: #1
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (332104): Reading SDC File: 'cyclone4_slave.out.sdc'
+Warning (332174): Ignored filter at cyclone4_slave.out.sdc(41): i_clk_50MHz could not be matched with a port File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 41
+Warning (332049): Ignored create_clock at cyclone4_slave.out.sdc(41): Argument <targets> is an empty collection File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 41
+    Info (332050): create_clock -name {i_clk_50MHz} -period 1.000 -waveform { 0.000 0.500 } [get_ports {i_clk_50MHz}] File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 41
+Warning (332174): Ignored filter at cyclone4_slave.out.sdc(42): blaster_handler:BLASTER_INST|tx_start could not be matched with a register File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 42
+Warning (332049): Ignored create_clock at cyclone4_slave.out.sdc(42): Argument <targets> is an empty collection File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 42
+    Info (332050): create_clock -name {blaster_handler:BLASTER_INST|tx_start} -period 1.000 -waveform { 0.000 0.500 } [get_registers {blaster_handler:BLASTER_INST|tx_start}] File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 42
+Warning (332174): Ignored filter at cyclone4_slave.out.sdc(61): blaster_handler:BLASTER_INST|tx_start could not be matched with a clock File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 61
+Warning (332174): Ignored filter at cyclone4_slave.out.sdc(61): i_clk_50MHz could not be matched with a clock File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 61
+Warning (332049): Ignored set_clock_uncertainty at cyclone4_slave.out.sdc(61): Argument -rise_from with value [get_clocks {blaster_handler:BLASTER_INST|tx_start}] contains zero elements File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 61
+    Info (332050): set_clock_uncertainty -rise_from [get_clocks {blaster_handler:BLASTER_INST|tx_start}] -rise_to [get_clocks {i_clk_50MHz}]  0.020   File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 61
+Warning (332049): Ignored set_clock_uncertainty at cyclone4_slave.out.sdc(61): Argument -rise_to with value [get_clocks {i_clk_50MHz}] contains zero elements File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 61
+Warning (332049): Ignored set_clock_uncertainty at cyclone4_slave.out.sdc(62): Argument -rise_from with value [get_clocks {blaster_handler:BLASTER_INST|tx_start}] contains zero elements File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 62
+    Info (332050): set_clock_uncertainty -rise_from [get_clocks {blaster_handler:BLASTER_INST|tx_start}] -fall_to [get_clocks {i_clk_50MHz}]  0.020   File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 62
+Warning (332049): Ignored set_clock_uncertainty at cyclone4_slave.out.sdc(62): Argument -fall_to with value [get_clocks {i_clk_50MHz}] contains zero elements File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 62
+Warning (332049): Ignored set_clock_uncertainty at cyclone4_slave.out.sdc(63): Argument -fall_from with value [get_clocks {blaster_handler:BLASTER_INST|tx_start}] contains zero elements File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 63
+    Info (332050): set_clock_uncertainty -fall_from [get_clocks {blaster_handler:BLASTER_INST|tx_start}] -rise_to [get_clocks {i_clk_50MHz}]  0.020   File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 63
+Warning (332049): Ignored set_clock_uncertainty at cyclone4_slave.out.sdc(63): Argument -rise_to with value [get_clocks {i_clk_50MHz}] contains zero elements File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 63
+Warning (332049): Ignored set_clock_uncertainty at cyclone4_slave.out.sdc(64): Argument -fall_from with value [get_clocks {blaster_handler:BLASTER_INST|tx_start}] contains zero elements File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 64
+    Info (332050): set_clock_uncertainty -fall_from [get_clocks {blaster_handler:BLASTER_INST|tx_start}] -fall_to [get_clocks {i_clk_50MHz}]  0.020   File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 64
+Warning (332049): Ignored set_clock_uncertainty at cyclone4_slave.out.sdc(64): Argument -fall_to with value [get_clocks {i_clk_50MHz}] contains zero elements File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 64
+Warning (332049): Ignored set_clock_uncertainty at cyclone4_slave.out.sdc(65): Argument -rise_from with value [get_clocks {i_clk_50MHz}] contains zero elements File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 65
+    Info (332050): set_clock_uncertainty -rise_from [get_clocks {i_clk_50MHz}] -rise_to [get_clocks {blaster_handler:BLASTER_INST|tx_start}]  0.020   File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 65
+Warning (332049): Ignored set_clock_uncertainty at cyclone4_slave.out.sdc(65): Argument -rise_to with value [get_clocks {blaster_handler:BLASTER_INST|tx_start}] contains zero elements File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 65
+Warning (332049): Ignored set_clock_uncertainty at cyclone4_slave.out.sdc(66): Argument -rise_from with value [get_clocks {i_clk_50MHz}] contains zero elements File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 66
+    Info (332050): set_clock_uncertainty -rise_from [get_clocks {i_clk_50MHz}] -fall_to [get_clocks {blaster_handler:BLASTER_INST|tx_start}]  0.020   File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 66
+Warning (332049): Ignored set_clock_uncertainty at cyclone4_slave.out.sdc(66): Argument -fall_to with value [get_clocks {blaster_handler:BLASTER_INST|tx_start}] contains zero elements File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 66
+Warning (332049): Ignored set_clock_uncertainty at cyclone4_slave.out.sdc(67): Argument -rise_from with value [get_clocks {i_clk_50MHz}] contains zero elements File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 67
+    Info (332050): set_clock_uncertainty -rise_from [get_clocks {i_clk_50MHz}] -rise_to [get_clocks {i_clk_50MHz}]  0.020   File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 67
+Warning (332049): Ignored set_clock_uncertainty at cyclone4_slave.out.sdc(67): Argument -rise_to with value [get_clocks {i_clk_50MHz}] contains zero elements File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 67
+Warning (332049): Ignored set_clock_uncertainty at cyclone4_slave.out.sdc(68): Argument -rise_from with value [get_clocks {i_clk_50MHz}] contains zero elements File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 68
+    Info (332050): set_clock_uncertainty -rise_from [get_clocks {i_clk_50MHz}] -fall_to [get_clocks {i_clk_50MHz}]  0.020   File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 68
+Warning (332049): Ignored set_clock_uncertainty at cyclone4_slave.out.sdc(68): Argument -fall_to with value [get_clocks {i_clk_50MHz}] contains zero elements File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 68
+Warning (332049): Ignored set_clock_uncertainty at cyclone4_slave.out.sdc(69): Argument -fall_from with value [get_clocks {i_clk_50MHz}] contains zero elements File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 69
+    Info (332050): set_clock_uncertainty -fall_from [get_clocks {i_clk_50MHz}] -rise_to [get_clocks {blaster_handler:BLASTER_INST|tx_start}]  0.020   File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 69
+Warning (332049): Ignored set_clock_uncertainty at cyclone4_slave.out.sdc(69): Argument -rise_to with value [get_clocks {blaster_handler:BLASTER_INST|tx_start}] contains zero elements File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 69
+Warning (332049): Ignored set_clock_uncertainty at cyclone4_slave.out.sdc(70): Argument -fall_from with value [get_clocks {i_clk_50MHz}] contains zero elements File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 70
+    Info (332050): set_clock_uncertainty -fall_from [get_clocks {i_clk_50MHz}] -fall_to [get_clocks {blaster_handler:BLASTER_INST|tx_start}]  0.020   File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 70
+Warning (332049): Ignored set_clock_uncertainty at cyclone4_slave.out.sdc(70): Argument -fall_to with value [get_clocks {blaster_handler:BLASTER_INST|tx_start}] contains zero elements File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 70
+Warning (332049): Ignored set_clock_uncertainty at cyclone4_slave.out.sdc(71): Argument -fall_from with value [get_clocks {i_clk_50MHz}] contains zero elements File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 71
+    Info (332050): set_clock_uncertainty -fall_from [get_clocks {i_clk_50MHz}] -rise_to [get_clocks {i_clk_50MHz}]  0.020   File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 71
+Warning (332049): Ignored set_clock_uncertainty at cyclone4_slave.out.sdc(71): Argument -rise_to with value [get_clocks {i_clk_50MHz}] contains zero elements File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 71
+Warning (332049): Ignored set_clock_uncertainty at cyclone4_slave.out.sdc(72): Argument -fall_from with value [get_clocks {i_clk_50MHz}] contains zero elements File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 72
+    Info (332050): set_clock_uncertainty -fall_from [get_clocks {i_clk_50MHz}] -fall_to [get_clocks {i_clk_50MHz}]  0.020   File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 72
+Warning (332049): Ignored set_clock_uncertainty at cyclone4_slave.out.sdc(72): Argument -fall_to with value [get_clocks {i_clk_50MHz}] contains zero elements File: C:/Users/Sit19/Documents/FPGA_DOCS/cyclone_10_gx/blaster/cyclone4_blaster_handler/cyclone4_slave.out.sdc Line: 72
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name CLK CLK
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+Info (332146): Worst-case setup slack is -1.576
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -1.576             -51.678 CLK 
+Info (332146): Worst-case hold slack is 0.454
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.454               0.000 CLK 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -90.733 CLK 
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+Info (332146): Worst-case setup slack is -1.429
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -1.429             -44.292 CLK 
+Info (332146): Worst-case hold slack is 0.402
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.402               0.000 CLK 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -90.733 CLK 
+Info: Analyzing Fast 1200mV 0C Model
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+Info (332146): Worst-case setup slack is -0.157
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.157              -1.331 CLK 
+Info (332146): Worst-case hold slack is 0.187
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.187               0.000 CLK 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -79.336 CLK 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 33 warnings
+    Info: Peak virtual memory: 664 megabytes
+    Info: Processing ended: Mon Jun 07 17:13:04 2021
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+

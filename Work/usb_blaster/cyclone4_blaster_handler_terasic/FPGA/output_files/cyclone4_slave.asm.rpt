@@ -1,0 +1,103 @@
+Assembler report for cyclone4_slave
+Tue Jun 08 11:19:39 2021
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Assembler Summary
+  3. Assembler Settings
+  4. Assembler Generated Files
+  5. Assembler Device Options: C:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/FPGA/output_files/cyclone4_slave.sof
+  6. Assembler Device Options: C:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/FPGA/output_files/cyclone4_slave.pof
+  7. Assembler Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++---------------------------------------------------------------+
+; Assembler Summary                                             ;
++-----------------------+---------------------------------------+
+; Assembler Status      ; Successful - Tue Jun 08 11:19:39 2021 ;
+; Revision Name         ; cyclone4_slave                        ;
+; Top-level Entity Name ; cyclone4_top                          ;
+; Family                ; Cyclone IV E                          ;
+; Device                ; EP4CE6E22C8                           ;
++-----------------------+---------------------------------------+
+
+
++----------------------------------+
+; Assembler Settings               ;
++--------+---------+---------------+
+; Option ; Setting ; Default Value ;
++--------+---------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                                ;
++----------------------------------------------------------------------------------------------------------+
+; File Name                                                                                                ;
++----------------------------------------------------------------------------------------------------------+
+; C:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/FPGA/output_files/cyclone4_slave.sof ;
+; C:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/FPGA/output_files/cyclone4_slave.pof ;
++----------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/FPGA/output_files/cyclone4_slave.sof ;
++----------------+-------------------------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                                           ;
++----------------+-------------------------------------------------------------------------------------------------------------------+
+; JTAG usercode  ; 0x000B4883                                                                                                        ;
+; Checksum       ; 0x000B4883                                                                                                        ;
++----------------+-------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/FPGA/output_files/cyclone4_slave.pof ;
++--------------------+---------------------------------------------------------------------------------------------------------------+
+; Option             ; Setting                                                                                                       ;
++--------------------+---------------------------------------------------------------------------------------------------------------+
+; JTAG usercode      ; 0x00000000                                                                                                    ;
+; Checksum           ; 0x0673EF38                                                                                                    ;
+; Compression Ratio  ; 3                                                                                                             ;
++--------------------+---------------------------------------------------------------------------------------------------------------+
+
+
++--------------------+
+; Assembler Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Assembler
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+    Info: Processing started: Tue Jun 08 11:19:38 2021
+Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off cyclone4_slave -c cyclone4_slave
+Info (115031): Writing out detailed assembly data for power analysis
+Info (115030): Assembler is generating device programming files
+Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4673 megabytes
+    Info: Processing ended: Tue Jun 08 11:19:39 2021
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

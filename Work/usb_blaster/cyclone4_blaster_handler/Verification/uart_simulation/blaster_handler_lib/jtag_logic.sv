@@ -1,0 +1,205 @@
+module jtag_logic
+(
+	input  CLK,
+	input  nRST,
+	
+	// JTAG mode
+	input  		 B_TDO,
+	output logic B_TCK,
+	output logic B_TMS,
+	output logic B_TDI,
+	
+	// Active Serial mode
+	input  		 B_ASDO,
+	output logic B_NCE,
+	output logic B_NCS,
+	
+	// led
+	output logic B_OE,
+	
+	// fifo data
+	output logic RX_RD_REQ,
+	input  RX_EMPTY,
+	input [7:0] D_IN,
+	
+	input TX_FULL,
+	output logic TX_WR_REQ,
+	output [7:0] D_OUT
+);
+
+enum logic [3:0] {
+	IDLE									= 4'd0,
+	SET_RD_REQ								= 4'd1,
+	LATCH_DATA_FROM_HOST					= 4'd2,
+	PARSE_DATA								= 4'd3,
+	
+	// bit banging 
+	BITS_SET_PINS_FROM_DATA					= 4'd4,
+	
+	// shift mode
+	BYTES_SET_BITCOUNT						= 4'd5,
+	BYTES_GET_TDO_SET_TDI					= 4'd6,
+	BYTES_CLOCK_HIGH_AND_SHIFT				= 4'd7,
+	BYTES_KEEP_CLOCK_HIGH					= 4'd8,
+	BYTES_CLOCK_FINISH						= 4'd9,
+	WAIT_FOR_TX_NOT_FULL					= 4'd10,
+	SET_WR_HIGH								= 4'd11
+} state = IDLE, next_state;
+
+logic carry_in = 1'b0;
+logic do_output = 1'b0;
+logic [7:0] ioshifter = '0;
+logic [8:0] bitcount = '0;
+
+
+// Sequential state transition
+always_ff @(posedge CLK, negedge nRST) begin
+	if(~nRST) begin
+		state <= IDLE;
+	end else begin
+		state <= next_state;
+	end
+end
+
+// Combinational next state logic
+always_comb begin
+	
+	next_state <= IDLE;
+	
+	unique case(state)
+		
+		// ============================ INPUT
+		IDLE: next_state <= RX_EMPTY ? IDLE : SET_RD_REQ;
+		
+		SET_RD_REQ: next_state <= LATCH_DATA_FROM_HOST;
+		
+		LATCH_DATA_FROM_HOST: next_state <= PARSE_DATA;
+		
+		PARSE_DATA: begin
+			if(bitcount[8:3] != 6'b000000) begin
+				next_state <= BYTES_GET_TDO_SET_TDI;
+			end else if(ioshifter[7]) begin
+				next_state <= BYTES_SET_BITCOUNT;
+			end else begin
+				next_state <= BITS_SET_PINS_FROM_DATA;
+			end;
+		end
+		
+		BYTES_SET_BITCOUNT: next_state <= IDLE;
+		
+		// ============================ BIT BANGING
+		BITS_SET_PINS_FROM_DATA: begin
+			if(ioshifter[6] == 1'b0) next_state <= IDLE; // read next byte from host
+			else 					 next_state <= WAIT_FOR_TX_NOT_FULL; // output byte to host
+		end
+		
+		// ============================ BYTE OUTPUT (SHIFT OUT 8 BITS)
+		BYTES_GET_TDO_SET_TDI: next_state <= BYTES_CLOCK_HIGH_AND_SHIFT;
+		
+		BYTES_CLOCK_HIGH_AND_SHIFT: next_state <= BYTES_KEEP_CLOCK_HIGH;
+		
+		BYTES_KEEP_CLOCK_HIGH: next_state <= BYTES_CLOCK_FINISH;
+		
+		BYTES_CLOCK_FINISH: begin
+			if(bitcount[2:0] != 3'b111) begin
+				next_state <= BYTES_GET_TDO_SET_TDI; //clock next bit
+			end else if(do_output == 1'b1) begin
+				next_state <= WAIT_FOR_TX_NOT_FULL; // output byte to host
+			end else begin
+				next_state <= IDLE; // read next byte from host
+			end
+		end
+		
+		// ============================ OUTPUT BYTE TO HOST
+		WAIT_FOR_TX_NOT_FULL: next_state <= TX_FULL ? WAIT_FOR_TX_NOT_FULL : SET_WR_HIGH;
+		
+		SET_WR_HIGH: next_state <= IDLE;  // read next byte from host
+		
+	endcase
+end
+
+
+// state handler
+always_ff @(posedge CLK, negedge nRST) begin
+	if(~nRST) begin
+		ioshifter <= '0;
+		
+		B_TCK <= 1'b0;
+		B_TMS <= 1'b0;
+		B_NCE <= 1'b1;
+		B_NCS <= 1'b1;
+		B_TDI <= 1'b0;
+		B_OE  <= 1'b0;
+		
+		bitcount <= '0;
+		
+		do_output <= 1'b0;
+		carry_in <= 1'b0;
+	end else begin
+		
+		if (next_state == LATCH_DATA_FROM_HOST) begin
+			ioshifter[7:0] <= D_IN;
+		end
+		
+		if(next_state == BITS_SET_PINS_FROM_DATA) begin
+			B_TCK <= ioshifter[0];
+			B_TMS <= ioshifter[1];
+			B_NCE <= ioshifter[2];
+			B_NCS <= ioshifter[3];
+			B_TDI <= ioshifter[4];
+			B_OE  <= ioshifter[5];
+			ioshifter <= {6'b000000, B_ASDO, B_TDO};
+		end
+		
+		if(next_state == BYTES_SET_BITCOUNT) begin
+			bitcount <= {ioshifter[5:0], 3'b111};
+			do_output <= ioshifter[6];
+		end
+		
+		if(next_state == BYTES_GET_TDO_SET_TDI) begin
+			if(B_NCS) begin
+				carry_in <= B_TDO; // JTAG mode (nCS=1)
+			end else begin
+				carry_in <= B_ASDO; // Active Serial mode (nCS=0)
+			end
+			B_TDI <= ioshifter[0];
+			bitcount <= bitcount - 1'b1;
+		end
+		
+		if((next_state == BYTES_CLOCK_HIGH_AND_SHIFT) | (next_state == BYTES_KEEP_CLOCK_HIGH)) begin
+			B_TCK <= 1'b1;
+		end
+		
+		if(next_state == BYTES_CLOCK_HIGH_AND_SHIFT) begin
+			ioshifter <= {carry_in, ioshifter[7:1]};
+		end
+		
+		if(next_state == BYTES_CLOCK_FINISH) begin
+			B_TCK <= 1'b0;
+		end
+	end
+end
+
+
+// fifo rx read req --------------------------------------------------
+always_ff @(posedge CLK, negedge nRST) begin
+	if(~nRST) begin
+		RX_RD_REQ <= 1'b0;
+	end else begin
+		RX_RD_REQ <= (next_state == SET_RD_REQ) ? 1'b1 : 1'b0;
+	end
+end
+
+
+// fifo tx write req --------------------------------------------------
+always_ff @(posedge CLK, negedge nRST) begin
+	if(~nRST) begin
+		TX_WR_REQ <= 1'b0;
+	end else begin
+		TX_WR_REQ <= (next_state == SET_WR_HIGH) ? 1'b1 : 1'b0;
+	end
+end
+
+assign D_OUT = ioshifter;
+
+endmodule

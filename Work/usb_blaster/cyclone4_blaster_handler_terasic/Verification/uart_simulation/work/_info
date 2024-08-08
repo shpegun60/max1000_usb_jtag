@@ -1,0 +1,278 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.01, Jan 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/admin/Documents/FPGA/fpga_usb_blaster/Verification/uart_simulation
+T_opt
+!s110 1623090596
+VgBUGG1?3m4[D>H04XKg;n1
+Z1 04 7 4 work top_sim fast 0
+=3-02004c4f4f50-60be65a4-20e-d6c
+o-quiet -auto_acc_if_foreign -work work -L C:/Users/admin/Documents/Sim_lib_questasim2020.1/220model -L C:/Users/admin/Documents/Sim_lib_questasim2020.1/altera_mf -L C:/Users/admin/Documents/Sim_lib_questasim2020.1/altera_primitives
+Z2 tCvgOpt 0
+n@_opt
+Z3 OL;O;2020.1;71
+R0
+T_opt1
+!s110 1623090605
+VmeOolTE_<fRkiDTfd6oT^0
+R1
+=1-02004c4f4f50-60be65ad-4f-3280
+o-quiet -auto_acc_if_foreign -work work -L C:/Users/admin/Documents/Sim_lib_questasim2020.1/220model -L C:/Users/admin/Documents/Sim_lib_questasim2020.1/altera_mf -L C:/Users/admin/Documents/Sim_lib_questasim2020.1/altera_primitives +acc
+R2
+n@_opt1
+R3
+vblaster_fifo
+Z4 !s110 1623090594
+!i10b 1
+!s100 3dU:XZa06m@g@l`CFXS`S0
+Z5 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I8@::Wz=oTCKldk6_2d[eR2
+Z6 VDg1SIo80bB@j0V0VzS_@n1
+Z7 dC:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/Verification/uart_simulation
+Z8 w1622985007
+8C:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/Verification/uart_simulation/blaster_handler_lib/blaster_fifo/blaster_fifo.v
+FC:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/Verification/uart_simulation/blaster_handler_lib/blaster_fifo/blaster_fifo.v
+!i122 62
+L0 39 54
+Z9 OL;L;2020.1;71
+r1
+!s85 0
+31
+Z10 !s108 1623090594.000000
+!s107 C:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/Verification/uart_simulation/blaster_handler_lib/blaster_fifo/blaster_fifo.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/Verification/uart_simulation/blaster_handler_lib/blaster_fifo/blaster_fifo.v|
+!i113 0
+o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vblaster_handler
+Z11 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z12 !s110 1623090593
+!i10b 1
+!s100 H1]3l3:@K0VTR1l[zfAEj2
+R5
+Io5lSC`g7YTAFKRd^>b0_D0
+R6
+S1
+R7
+w1623079508
+8C:\Users\admin\Documents\FPGA_DOCS\cyclone4_blaster_handler_terasic\Verification\uart_simulation\blaster_handler_lib\blaster_handler.sv
+FC:\Users\admin\Documents\FPGA_DOCS\cyclone4_blaster_handler_terasic\Verification\uart_simulation\blaster_handler_lib\blaster_handler.sv
+!i122 57
+L0 1 161
+R9
+r1
+!s85 0
+31
+Z13 !s108 1623090593.000000
+!s107 C:\Users\admin\Documents\FPGA_DOCS\cyclone4_blaster_handler_terasic\Verification\uart_simulation\blaster_handler_lib\blaster_handler.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:\Users\admin\Documents\FPGA_DOCS\cyclone4_blaster_handler_terasic\Verification\uart_simulation\blaster_handler_lib\blaster_handler.sv|
+!i113 0
+Z14 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vblaster_rx
+R11
+R4
+!i10b 1
+!s100 DzXo=7gfIG3=T`YQD2V<a2
+R5
+IYd^Ul:0X^:mB<XNH_oFTP0
+R6
+S1
+R7
+R8
+8C:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/Verification/uart_simulation/blaster_handler_lib/blaster_uart/blaster_rx.sv
+FC:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/Verification/uart_simulation/blaster_handler_lib/blaster_uart/blaster_rx.sv
+!i122 60
+Z15 L0 4 125
+R9
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/Verification/uart_simulation/blaster_handler_lib/blaster_uart/blaster_rx.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/Verification/uart_simulation/blaster_handler_lib/blaster_uart/blaster_rx.sv|
+!i113 0
+R14
+R2
+vblaster_tx
+R11
+R4
+!i10b 1
+!s100 MQO?;l<T@cnL`YlHQ6`gd0
+R5
+IJK4?ZA5f;l`l>gR=d>mD10
+R6
+S1
+R7
+R8
+8C:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/Verification/uart_simulation/blaster_handler_lib/blaster_uart/blaster_tx.sv
+FC:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/Verification/uart_simulation/blaster_handler_lib/blaster_uart/blaster_tx.sv
+!i122 61
+Z16 L0 3 124
+R9
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/Verification/uart_simulation/blaster_handler_lib/blaster_uart/blaster_tx.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/Verification/uart_simulation/blaster_handler_lib/blaster_uart/blaster_tx.sv|
+!i113 0
+R14
+R2
+vblaster_univibrator
+R11
+R12
+!i10b 1
+!s100 4i_Foc[NS]<MAJgATeLDR3
+R5
+I^_QJQd3n?;IBOkO0`NNSk2
+R6
+S1
+R7
+w1622995421
+8C:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/Verification/uart_simulation/blaster_handler_lib/blaster_univibrator.sv
+FC:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/Verification/uart_simulation/blaster_handler_lib/blaster_univibrator.sv
+!i122 58
+L0 2 36
+R9
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/Verification/uart_simulation/blaster_handler_lib/blaster_univibrator.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/Verification/uart_simulation/blaster_handler_lib/blaster_univibrator.sv|
+!i113 0
+R14
+R2
+vjtag_logic
+R11
+R12
+!i10b 1
+!s100 bEU=D4JAcVMT]GN<jB@oB0
+R5
+IGVQ1Ik_WME9gMcjU1G:?02
+R6
+S1
+R7
+w1623090513
+8C:\Users\admin\Documents\FPGA_DOCS\cyclone4_blaster_handler_terasic\Verification\uart_simulation\blaster_handler_lib\jtag_logic.sv
+FC:\Users\admin\Documents\FPGA_DOCS\cyclone4_blaster_handler_terasic\Verification\uart_simulation\blaster_handler_lib\jtag_logic.sv
+!i122 59
+L0 1 206
+R9
+r1
+!s85 0
+31
+R13
+!s107 C:\Users\admin\Documents\FPGA_DOCS\cyclone4_blaster_handler_terasic\Verification\uart_simulation\blaster_handler_lib\jtag_logic.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:\Users\admin\Documents\FPGA_DOCS\cyclone4_blaster_handler_terasic\Verification\uart_simulation\blaster_handler_lib\jtag_logic.sv|
+!i113 0
+R14
+R2
+Ysignals_intf
+R11
+R12
+!i10b 1
+!s100 oDbCAI7<cXOZBYk@hVS1R1
+R5
+I7B;bZQi[5:N9IiBE42@^@1
+R6
+S1
+R7
+Z17 w1623079952
+Z18 8C:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/Verification/uart_simulation/testbench.sv
+Z19 FC:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/Verification/uart_simulation/testbench.sv
+!i122 54
+L0 6 0
+R9
+r1
+!s85 0
+31
+R13
+Z20 !s107 C:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/Verification/uart_simulation/testbench.sv|
+Z21 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/Verification/uart_simulation/testbench.sv|
+!i113 0
+R14
+R2
+vtop_sim
+R11
+R12
+!i10b 1
+!s100 @ThR]SHmd1jEz@K2T?R901
+R5
+IQJQPDF=NGkhzb_F0Q59I^2
+R6
+S1
+R7
+R17
+R18
+R19
+!i122 54
+L0 24 114
+R9
+r1
+!s85 0
+31
+R13
+R20
+R21
+!i113 0
+R14
+R2
+vuart_rx
+R11
+R12
+!i10b 1
+!s100 T[[AKU>kS>U?Y`NlnZ=z=3
+R5
+I<6DWRSFDB_Mk]1Rl4D[fC2
+R6
+S1
+R7
+w1622906341
+8C:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/Verification/uart_simulation/uart_rx.sv
+FC:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/Verification/uart_simulation/uart_rx.sv
+!i122 55
+R15
+R9
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/Verification/uart_simulation/uart_rx.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/Verification/uart_simulation/uart_rx.sv|
+!i113 0
+R14
+R2
+vuart_tx
+R11
+R12
+!i10b 1
+!s100 kOBO>Z8SciTGb[GYbWdno3
+R5
+ILGX0LU[<G>[jE99OhTOlB3
+R6
+S1
+R7
+w1622906459
+8C:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/Verification/uart_simulation/uart_tx.sv
+FC:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/Verification/uart_simulation/uart_tx.sv
+!i122 56
+R16
+R9
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/Verification/uart_simulation/uart_tx.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/admin/Documents/FPGA_DOCS/cyclone4_blaster_handler_terasic/Verification/uart_simulation/uart_tx.sv|
+!i113 0
+R14
+R2

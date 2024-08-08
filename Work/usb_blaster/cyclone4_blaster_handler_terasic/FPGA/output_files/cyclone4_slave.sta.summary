@@ -1,0 +1,101 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'i_clk_50MHz'
+Slack : -3.480
+TNS   : -416.030
+
+Type  : Slow 1200mV 85C Model Hold 'i_clk_50MHz'
+Slack : 0.432
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'i_clk_50MHz'
+Slack : -3.194
+TNS   : -303.928
+
+Type  : Slow 1200mV 85C Model Recovery 'blaster_handler:BLASTER_INST|tx_start'
+Slack : -2.189
+TNS   : -2.189
+
+Type  : Slow 1200mV 85C Model Removal 'i_clk_50MHz'
+Slack : 1.431
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'blaster_handler:BLASTER_INST|tx_start'
+Slack : 2.663
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'i_clk_50MHz'
+Slack : -3.201
+TNS   : -348.971
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'blaster_handler:BLASTER_INST|tx_start'
+Slack : -1.487
+TNS   : -1.487
+
+Type  : Slow 1200mV 0C Model Setup 'i_clk_50MHz'
+Slack : -3.172
+TNS   : -373.247
+
+Type  : Slow 1200mV 0C Model Hold 'i_clk_50MHz'
+Slack : 0.382
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'i_clk_50MHz'
+Slack : -2.974
+TNS   : -265.599
+
+Type  : Slow 1200mV 0C Model Recovery 'blaster_handler:BLASTER_INST|tx_start'
+Slack : -1.907
+TNS   : -1.907
+
+Type  : Slow 1200mV 0C Model Removal 'i_clk_50MHz'
+Slack : 1.466
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'blaster_handler:BLASTER_INST|tx_start'
+Slack : 2.432
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'i_clk_50MHz'
+Slack : -3.201
+TNS   : -348.971
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'blaster_handler:BLASTER_INST|tx_start'
+Slack : -1.487
+TNS   : -1.487
+
+Type  : Fast 1200mV 0C Model Setup 'i_clk_50MHz'
+Slack : -0.975
+TNS   : -72.268
+
+Type  : Fast 1200mV 0C Model Hold 'i_clk_50MHz'
+Slack : 0.176
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'i_clk_50MHz'
+Slack : -0.866
+TNS   : -49.194
+
+Type  : Fast 1200mV 0C Model Recovery 'blaster_handler:BLASTER_INST|tx_start'
+Slack : -0.379
+TNS   : -0.379
+
+Type  : Fast 1200mV 0C Model Removal 'i_clk_50MHz'
+Slack : 0.492
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'blaster_handler:BLASTER_INST|tx_start'
+Slack : 1.126
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'i_clk_50MHz'
+Slack : -3.000
+TNS   : -273.557
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'blaster_handler:BLASTER_INST|tx_start'
+Slack : -1.000
+TNS   : -1.000
+
+------------------------------------------------------------

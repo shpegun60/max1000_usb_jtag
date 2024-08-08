@@ -1,0 +1,5 @@
+set_global_assignment -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "blaster_handler.sv"]
+set_global_assignment -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "blaster_univibrator.sv"]
+set_global_assignment -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "blaster_uart/blaster_rx.sv"]
+set_global_assignment -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "blaster_uart/blaster_tx.sv"]
+set_global_assignment -name QIP_FILE [file join $::quartus(qip_path) "blaster_fifo/blaster_fifo.qip"]

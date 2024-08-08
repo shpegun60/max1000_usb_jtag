@@ -1,0 +1,37 @@
+Protel Design System Design Rule Check
+PCB File : \\srvr202\SIT\Projects\MIL\10CX\usb_blaster\usbblaster_ft245\Usb_blaster.PCB
+Date     : 06.07.2021
+Time     : 10:55:14
+
+Processing Rule : Clearance Constraint (Gap=0.5mm) (InPolygon),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.2mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+   Violation between Short-Circuit Constraint: Between Pad Designator102-2(35.789mm,8.89mm) on MultiLayer And Track (34.163mm,9.474mm)(34.747mm,8.89mm) on TopLayer Location : [X = 238.031mm][Y = 212.096mm]
+   Violation between Short-Circuit Constraint: Between Pad Designator102-2(35.789mm,8.89mm) on MultiLayer And Track (34.747mm,8.89mm)(35.789mm,8.89mm) on TopLayer Location : [X = 238.552mm][Y = 212.09mm]
+   Violation between Short-Circuit Constraint: Between Pad R18-2(34.163mm,13.767mm) on TopLayer And Track (34.163mm,9.474mm)(34.163mm,13.767mm) on TopLayer Location : [X = 237.363mm][Y = 216.808mm]
+Rule Violations :3
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.127mm) (Max=25.4mm) (Preferred=0.254mm) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)
+   Violation between Hole Size Constraint: (3.5mm > 2.54mm) Pad Designator104-PH(85mm,42mm) on MultiLayer Actual Hole Size = 3.5mm
+   Violation between Hole Size Constraint: (3.5mm > 2.54mm) Pad Designator106-PH(85mm,5mm) on MultiLayer Actual Hole Size = 3.5mm
+   Violation between Hole Size Constraint: (3.5mm > 2.54mm) Pad Designator108-PH(5mm,5mm) on MultiLayer Actual Hole Size = 3.5mm
+   Violation between Hole Size Constraint: (3.5mm > 2.54mm) Pad Designator110-PH(5mm,42mm) on MultiLayer Actual Hole Size = 3.5mm
+Rule Violations :4
+
+
+Violations Detected : 7
+Waived Violations : 0
+Time Elapsed        : 00:00:01

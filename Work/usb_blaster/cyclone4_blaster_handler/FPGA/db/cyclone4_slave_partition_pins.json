@@ -1,0 +1,97 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "B_TCK",
+					"strict" : false
+				},
+				{
+					"name" : "B_TMS",
+					"strict" : false
+				},
+				{
+					"name" : "B_NCE",
+					"strict" : false
+				},
+				{
+					"name" : "B_NCS",
+					"strict" : false
+				},
+				{
+					"name" : "B_TDI",
+					"strict" : false
+				},
+				{
+					"name" : "B_OE",
+					"strict" : false
+				},
+				{
+					"name" : "nRD",
+					"strict" : false
+				},
+				{
+					"name" : "WR",
+					"strict" : false
+				},
+				{
+					"name" : "D[0]",
+					"strict" : false
+				},
+				{
+					"name" : "D[1]",
+					"strict" : false
+				},
+				{
+					"name" : "D[2]",
+					"strict" : false
+				},
+				{
+					"name" : "D[3]",
+					"strict" : false
+				},
+				{
+					"name" : "D[4]",
+					"strict" : false
+				},
+				{
+					"name" : "D[5]",
+					"strict" : false
+				},
+				{
+					"name" : "D[6]",
+					"strict" : false
+				},
+				{
+					"name" : "D[7]",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
+					"strict" : false
+				},
+				{
+					"name" : "nRST",
+					"strict" : false
+				},
+				{
+					"name" : "B_TDO",
+					"strict" : false
+				},
+				{
+					"name" : "B_ASDO",
+					"strict" : false
+				},
+				{
+					"name" : "nRXF",
+					"strict" : false
+				},
+				{
+					"name" : "nTXE",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
